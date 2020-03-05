@@ -71,6 +71,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // update the map layer when either visibleBox or styles changes
+    var newStyle = styles[visibleBox];
+    if (newStyle) {
+      olParser
+        .writeStyle(newStyle)
+        .then(olStyle => {
+          vector.setStyle(olStyle);
+        })
+        .catch(error => console.log(error));
+    }
+  });
+
+  useEffect(() => {
     // add scroll eventlistener
     // unfortunately, this will be re-run as soon as visible
     // box changes. Otherwise we don't have visible box in our scope
@@ -128,6 +141,12 @@ function App() {
           style={styles[visibleBox]}
           compact={true}
           onStyleChange={newStyle => {
+            olParser
+              .writeStyle(newStyle)
+              .then(olStyle => {
+                vector.setStyle(olStyle);
+              })
+              .catch(error => console.log(error));
             setStyles(oldStyles => {
               const newStyles = JSON.parse(JSON.stringify(oldStyles));
               newStyles[visibleBox] = newStyle;
