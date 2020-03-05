@@ -76,12 +76,12 @@ var vector = new VectorLayer({
   projection: 'EPSG:4326'
 });
 
-const center = [0, 0];
+const center = [0, 8000000];
 
 const map = new OlMap({
   view: new OlView({
     center: center,
-    zoom: 4,
+    zoom: 2,
     projection: 'EPSG:3857'
   }),
   layers: [base, vector],
