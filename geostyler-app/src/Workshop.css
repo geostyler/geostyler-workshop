@@ -52,18 +52,18 @@ html, body, #root, .App, #map {
     border-color: #4464ff;
 }
 
-.symbolizer-editor-window {
+.filter-editor-window, .rule-generator-window, .symbolizer-editor-window {
     z-index: 1000 !important;
     position: fixed !important;
-    transform: translate(0, 0) !important;
-}
-
-.rule-generator-window {
-    z-index: 1000 !important;
-    position: fixed !important;
-    transform: translate(0, 0) !important;
+    left: 10vw !important;
+    top: 30vh !important;
+    transform: none !important;
 }
 
 .attributions {
     position: relative;
+}
+
+.ant-drawer-content-wrapper {
+    height: 400px !important;
 }
