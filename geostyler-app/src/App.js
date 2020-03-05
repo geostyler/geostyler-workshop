@@ -5,6 +5,8 @@ import OlView from 'ol/View';
 import DragPan from 'ol/interaction/DragPan';
 import { Drawer, Button } from 'antd';
 
+import OpenLayersParser from 'geostyler-openlayers-parser';
+
 import isElementInViewport from './viewportHelper';
 
 import './App.css';
@@ -13,6 +15,7 @@ import 'antd/dist/antd.css';
 import './Workshop.css';
 import Attributions from './Attributions';
 import {
+  getDefaultStyle,
   getBaseLayer,
   getCovidLayer
 } from './helper';
@@ -26,6 +29,8 @@ import {
 } from 'geostyler';
 
 import covidDeath from './data/covid-death.json';
+
+const defaultOlStyle = getDefaultStyle();
 
 var base = getBaseLayer();
 var vector = getCovidLayer(covidDeath);
@@ -42,10 +47,28 @@ const map = new OlMap({
   interactions: [new DragPan()]
 });
 
+const olParser = new OpenLayersParser();
+
 function App() {
 
+  let [styles, setStyles] = useState([]);
   let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
+
+  useEffect(() => {
+    // on page init parse default style once
+    // and setup the styles array
+    olParser
+      .readStyle(defaultOlStyle)
+      .then(gsStyle => {
+        const newStyles = []
+        for (var i = 0; i < 3; i++) {
+          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
+        }
+        setStyles(newStyles);
+      })
+      .catch(error => console.log(error));
+  }, []);
 
   useEffect(() => {
     // add scroll eventlistener
@@ -102,7 +125,15 @@ function App() {
         mask={false}
       >
         <GsStyle
+          style={styles[visibleBox]}
           compact={true}
+          onStyleChange={newStyle => {
+            setStyles(oldStyles => {
+              const newStyles = JSON.parse(JSON.stringify(oldStyles));
+              newStyles[visibleBox] = newStyle;
+              return newStyles;
+            });
+          }}
         />
       </Drawer>
       <span id="ws-overlay-1" className="ws-overlay">
