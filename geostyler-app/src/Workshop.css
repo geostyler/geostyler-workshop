@@ -20,6 +20,7 @@ html, body, #root, .App, #map {
 }
 
 .ws-overlay {
+    position: relative;
     border: 2px solid #f2f51e;
     border-radius: 5px;
     width: 30vw;
@@ -61,4 +62,8 @@ html, body, #root, .App, #map {
     z-index: 1000 !important;
     position: fixed !important;
     transform: translate(0, 0) !important;
+}
+
+.attributions {
+    position: relative;
 }

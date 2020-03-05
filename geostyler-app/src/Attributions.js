@@ -2,7 +2,7 @@ import React from 'react';
 
 function Attributions() {
     return (
-        <div>
+        <div className="attributions">
             <h1>Attributions</h1>
             <ul>
                 <li><b>Countries:</b><a href="https://ahocevar.com/geoserver/wfs?service=WFS&version=1.1.0&request=GetCapabilities">Andreas Hocevar & NaturalEarth</a></li>

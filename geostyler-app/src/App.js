@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import OlMap from 'ol/Map';
 import OlView from 'ol/View';
-import VectorSource from 'ol/source/Vector';
-import { bbox as bboxStrategy } from 'ol/loadingstrategy';
-import GeoJSON from 'ol/format/GeoJSON';
 import DragPan from 'ol/interaction/DragPan';
-import { Stroke, Fill, Style, Circle } from 'ol/style';
-import { Vector as VectorLayer } from 'ol/layer';
 import { Drawer, Button } from 'antd';
 
 import OpenLayersParser from 'geostyler-openlayers-parser';
@@ -20,6 +15,11 @@ import 'ol/ol.css';
 import 'antd/dist/antd.css';
 import './Workshop.css';
 import Attributions from './Attributions';
+import {
+  getDefaultStyle,
+  getBaseLayer,
+  getCovidLayer
+} from './helper';
 
 import {
   MapComponent
@@ -31,50 +31,10 @@ import {
 
 import covidDeath from './data/covid-death.json';
 
-var baseSource = new VectorSource({
-  format: new GeoJSON(),
-  url: function (extent) {
-    return 'https://ahocevar.com/geoserver/wfs?service=WFS&' +
-      'version=1.1.0&request=GetFeature&typename=opengeo:countries&' +
-      'outputFormat=application/json&srsname=EPSG:3857&' +
-      'bbox=' + extent.join(',') + ',EPSG:3857';
-  },
-  strategy: bboxStrategy
-});
+const defaultOlStyle = getDefaultStyle();
 
-const defaultOlStyle = new Style({
-  stroke: new Stroke({
-    color: 'rgba(255, 255, 255, 1.0)',
-    width: 1
-  }),
-  fill: new Fill({
-    color: 'rgba(0, 0, 0, 1)'
-  }),
-  image: new Circle({
-    fill: new Fill({
-      color: 'rgba(255, 0, 0, 1.0)'
-    }),
-    radius: 5
-  })
-});
-
-var base = new VectorLayer({
-  source: baseSource,
-  style: defaultOlStyle,
-  projection: 'EPSG:3857'
-});
-
-var deathSource = new VectorSource({
-  features: (new GeoJSON()).readFeatures(covidDeath, {
-    featureProjection: 'EPSG:3857'
-  })
-});
-
-var vector = new VectorLayer({
-  source: deathSource,
-  style: defaultOlStyle,
-  projection: 'EPSG:4326'
-});
+var base = getBaseLayer();
+var vector = getCovidLayer(covidDeath);
 
 const center = [0, 8000000];
 
