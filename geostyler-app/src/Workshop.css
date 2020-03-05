@@ -55,8 +55,8 @@ html, body, #root, .App, #map {
 .filter-editor-window, .rule-generator-window, .symbolizer-editor-window {
     z-index: 1000 !important;
     position: fixed !important;
-    left: 10vw !important;
-    top: 30vh !important;
+    left: 60vw !important;
+    top: 20vh !important;
     transform: none !important;
 }
 
