@@ -6,6 +6,7 @@ import DragPan from 'ol/interaction/DragPan';
 import { Drawer, Button } from 'antd';
 
 import OpenLayersParser from 'geostyler-openlayers-parser';
+import GeoJSONParser from 'geostyler-geojson-parser';
 
 import isElementInViewport from './viewportHelper';
 
@@ -48,12 +49,14 @@ const map = new OlMap({
 });
 
 const olParser = new OpenLayersParser();
+const geojsonParser = new GeoJSONParser();
 
 function App() {
 
   let [styles, setStyles] = useState([]);
   let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
+  let [data, setData] = useState();
 
   useEffect(() => {
     // on page init parse default style once
@@ -69,6 +72,16 @@ function App() {
       })
       .catch(error => console.log(error));
   }, []);
+
+  useEffect(() => {
+    // parse data as soon as it changes
+    geojsonParser
+      .readData(covidDeath)
+      .then(gsData => {
+        setData(gsData);
+      })
+      .catch(error => console.log(error));
+  }, [data]);
 
   useEffect(() => {
     // update the map layer when either visibleBox or styles changes
@@ -140,6 +153,7 @@ function App() {
         <GsStyle
           style={styles[visibleBox]}
           compact={true}
+          data={data}
           onStyleChange={newStyle => {
             olParser
               .writeStyle(newStyle)
