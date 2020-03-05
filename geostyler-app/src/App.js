@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import OlMap from 'ol/Map';
 import OlView from 'ol/View';
 import DragPan from 'ol/interaction/DragPan';
+import { Drawer, Button } from 'antd';
 
 import isElementInViewport from './viewportHelper';
 
@@ -39,6 +40,7 @@ const map = new OlMap({
 
 function App() {
 
+  let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
 
   useEffect(() => {
@@ -73,9 +75,28 @@ function App() {
 
   return (
     <div className="App">
+      <Button
+        className="ws-toggle-editor-btn"
+        type="primary"
+        onClick={() => {
+          setDrawerVisible((currentState) => !currentState);
+        }}
+      >
+        Toggle Editor
+      </Button>
       <MapComponent
         map={map}
       />
+      <Drawer
+        title='GeoStyler Editor'
+        placement='top'
+        closable={true}
+        onClose={() => {
+          setDrawerVisible(false);
+        }}
+        visible={drawerVisible}
+        mask={false}
+      ></Drawer>
       <span id="ws-overlay-1" className="ws-overlay">
         <h1>Overlay {visibleBox + 1}</h1>
         <p>
