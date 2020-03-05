@@ -13,14 +13,17 @@ import './Workshop.css';
 import Attributions from './Attributions';
 import {
   getBaseLayer,
+  getCovidLayer
 } from './helper';
 
 import {
   MapComponent
 } from '@terrestris/react-geo';
 
+import covidDeath from './data/covid-death.json';
 
 var base = getBaseLayer();
+var vector = getCovidLayer(covidDeath);
 
 const center = [0, 8000000];
 
@@ -30,7 +33,7 @@ const map = new OlMap({
     zoom: 2,
     projection: 'EPSG:3857'
   }),
-  layers: [base],
+  layers: [base, vector],
   interactions: [new DragPan()]
 });
 
