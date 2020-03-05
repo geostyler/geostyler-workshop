@@ -21,6 +21,10 @@ import {
   MapComponent
 } from '@terrestris/react-geo';
 
+import {
+  Style as GsStyle
+} from 'geostyler';
+
 import covidDeath from './data/covid-death.json';
 
 var base = getBaseLayer();
@@ -96,7 +100,11 @@ function App() {
         }}
         visible={drawerVisible}
         mask={false}
-      ></Drawer>
+      >
+        <GsStyle
+          compact={true}
+        />
+      </Drawer>
       <span id="ws-overlay-1" className="ws-overlay">
         <h1>Overlay {visibleBox + 1}</h1>
         <p>
