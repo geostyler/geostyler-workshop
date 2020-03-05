@@ -1,0 +1,64 @@
+html, body, #root, .App, #map {
+    margin: 0;
+    padding: 0;
+    height: calc(100vh + (3 * 30vh) + (2 * 130vh) - 30vh);
+}
+
+.App {
+    background-color: black;
+}
+
+#map {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+.ws-toggle-editor-btn {
+    position: fixed;
+    z-index: 9999;
+}
+
+.ws-overlay {
+    border: 2px solid #f2f51e;
+    border-radius: 5px;
+    width: 30vw;
+    height: 30vh;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.ws-overlay, .ws-overlay > h1 {
+    color: white;
+}
+
+#ws-overlay-1 {
+    display: inline-block;
+    margin-left: 5vw;
+    margin-bottom: calc(130vh);
+    border-color: #f2f51e;
+}
+
+#ws-overlay-2 {
+    margin-left: calc(100vw - 30vw - 5vw);
+    margin-bottom: calc(130vh);
+    border-color: #52c41a;
+}
+
+#ws-overlay-3 {
+    margin-left: 5vw;
+    margin-bottom: calc(100vh - 30vh);
+    border-color: #4464ff;
+}
+
+.symbolizer-editor-window {
+    z-index: 1000 !important;
+    position: fixed !important;
+    transform: translate(0, 0) !important;
+}
+
+.rule-generator-window {
+    z-index: 1000 !important;
+    position: fixed !important;
+    transform: translate(0, 0) !important;
+}

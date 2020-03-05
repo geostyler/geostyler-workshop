@@ -1,0 +1,236 @@
+import React, { useState, useEffect } from 'react';
+
+import OlMap from 'ol/Map';
+import OlView from 'ol/View';
+import VectorSource from 'ol/source/Vector';
+import { bbox as bboxStrategy } from 'ol/loadingstrategy';
+import GeoJSON from 'ol/format/GeoJSON';
+import DragPan from 'ol/interaction/DragPan';
+import { Stroke, Fill, Style, Circle } from 'ol/style';
+import { Vector as VectorLayer } from 'ol/layer';
+import { Drawer, Button } from 'antd';
+
+import OpenLayersParser from 'geostyler-openlayers-parser';
+import GeoJSONParser from 'geostyler-geojson-parser';
+
+import isElementInViewport from './viewportHelper';
+
+import './App.css';
+import 'ol/ol.css';
+import 'antd/dist/antd.css';
+import './Workshop.css';
+import Attributions from './Attributions';
+
+import {
+  MapComponent
+} from '@terrestris/react-geo';
+
+import {
+  Style as GsStyle
+} from 'geostyler'
+
+import covidDeath from './data/covid-death.json';
+
+var baseSource = new VectorSource({
+  format: new GeoJSON(),
+  url: function (extent) {
+    return 'https://ahocevar.com/geoserver/wfs?service=WFS&' +
+      'version=1.1.0&request=GetFeature&typename=opengeo:countries&' +
+      'outputFormat=application/json&srsname=EPSG:3857&' +
+      'bbox=' + extent.join(',') + ',EPSG:3857';
+  },
+  strategy: bboxStrategy
+});
+
+const defaultOlStyle = new Style({
+  stroke: new Stroke({
+    color: 'rgba(255, 255, 255, 1.0)',
+    width: 1
+  }),
+  fill: new Fill({
+    color: 'rgba(0, 0, 0, 1)'
+  }),
+  image: new Circle({
+    fill: new Fill({
+      color: 'rgba(255, 0, 0, 1.0)'
+    }),
+    radius: 5
+  })
+});
+
+var base = new VectorLayer({
+  source: baseSource,
+  style: defaultOlStyle,
+  projection: 'EPSG:3857'
+});
+
+var deathSource = new VectorSource({
+  features: (new GeoJSON()).readFeatures(covidDeath, {
+    featureProjection: 'EPSG:3857'
+  })
+});
+
+var vector = new VectorLayer({
+  source: deathSource,
+  style: defaultOlStyle,
+  projection: 'EPSG:4326'
+});
+
+const center = [0, 0];
+
+const map = new OlMap({
+  view: new OlView({
+    center: center,
+    zoom: 4,
+    projection: 'EPSG:3857'
+  }),
+  layers: [base, vector],
+  interactions: [new DragPan()]
+});
+
+const olParser = new OpenLayersParser();
+const geojsonParser = new GeoJSONParser();
+
+function App() {
+
+  let [styles, setStyles] = useState([]);
+  let [drawerVisible, setDrawerVisible] = useState(false);
+  let [visibleBox, setVisibleBox] = useState(0);
+  let [data, setData] = useState();
+
+  useEffect(() => {
+    // on page init parse default style once
+    // and setup the styles array
+    olParser
+      .readStyle(defaultOlStyle)
+      .then(gsStyle => {
+        const newStyles = []
+        for (var i = 0; i < 3; i++) {
+          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
+        }
+        setStyles(newStyles);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  useEffect(() => {
+    // parse data as soon as it changes
+    geojsonParser
+      .readData(covidDeath)
+      .then(gsData => {
+        setData(gsData);
+      })
+      .catch(error => console.log(error));
+  }, [data]);
+
+  useEffect(() => {
+    // update the map layer when either visibleBox or styles changes
+    var newStyle = styles[visibleBox];
+    if (newStyle) {
+      olParser
+        .writeStyle(newStyle)
+        .then(olStyle => {
+          vector.setStyle(olStyle);
+        })
+        .catch(error => console.log(error));
+    }
+  });
+
+  useEffect(() => {
+    // add scroll eventlistener
+    // unfortunately, this will be re-run as soon as visible
+    // box changes. Otherwise we don't have visible box in our scope
+    const getVisibleBox = () => {
+      const boxes = [
+        document.getElementById('ws-overlay-1'),
+        document.getElementById('ws-overlay-2'),
+        document.getElementById('ws-overlay-3')
+      ]
+      const boxIdx = boxes.findIndex(box => isElementInViewport(box));
+      return boxIdx >= 0 ? boxIdx : visibleBox;
+    }
+
+    const handleScroll = () => {
+      const newVisibleBox = getVisibleBox();
+      if (newVisibleBox !== visibleBox) {
+        setVisibleBox(newVisibleBox);
+      }
+    }
+
+    document.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    }
+  }, [visibleBox]);
+
+
+  return (
+    <div className="App">
+      <Button
+        className="ws-toggle-editor-btn"
+        type="primary"
+        onClick={() => {
+          setDrawerVisible((currentState) => !currentState);
+        }}
+      >
+        Toggle Editor
+      </Button>
+      <MapComponent
+        map={map}
+      />
+      <Drawer
+        title='GeoStyler Editor'
+        placement='top'
+        closable={true}
+        onClose={() => {
+          setDrawerVisible(false);
+        }}
+        visible={drawerVisible}
+        mask={false}
+      >
+        <GsStyle
+          style={styles[visibleBox]}
+          compact={true}
+          data={data}
+          onStyleChange={newStyle => {
+            olParser
+              .writeStyle(newStyle)
+              .then(olStyle => {
+                vector.setStyle(olStyle);
+              })
+              .catch(error => console.log(error));
+            setStyles(oldStyles => {
+              const newStyles = JSON.parse(JSON.stringify(oldStyles));
+              newStyles[visibleBox] = newStyle;
+              return newStyles;
+            });
+          }}
+        />
+      </Drawer>
+      <span id="ws-overlay-1" className="ws-overlay">
+        <h1>Overlay {visibleBox + 1}</h1>
+        <p>
+          Put your info text here
+          </p>
+      </span>
+      <div id="ws-overlay-2" className="ws-overlay">
+        <h1>Overlay {visibleBox + 1}</h1>
+        <p>
+          Put your info text here
+          </p>
+      </div>
+      <div id="ws-overlay-3" className="ws-overlay">
+        <h1>Overlay {visibleBox + 1}</h1>
+        <p>
+          Put your info text here
+          </p>
+      </div>
+      <Attributions/>
+    </div>
+  );
+}
+
+export default App;
