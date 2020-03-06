@@ -1,6 +1,6 @@
 # React
 
-<img src="../images/reactjs.png" alt="" style="width: 250px;"/>
+<img src="../images/react-logo.png" alt="" style="width: 250px;"/>
 
 [React](https://reactjs.org) is a modern and open-source JavaScript library for building user interfaces based on ES6. Originally, it has been developed
 by a software engineer at Facebook and is still being maintained by Facebook (among others).

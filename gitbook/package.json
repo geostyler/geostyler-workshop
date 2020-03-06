@@ -5,6 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-advanced-emoji": "^0.1.9",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-image-captions": "^2.0.0",
+    "gitbook-plugin-richquotes": "0.0.9",
+    "gitbook-plugin-sectionx": "^2.1.0",
     "svgexport": "0.3.2"
   },
   "devDependencies": {},

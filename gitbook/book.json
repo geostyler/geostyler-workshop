@@ -12,6 +12,9 @@
     "authors": [{
       "name": "Jan Suleiman",
       "mail": "suleiman@terrestris.de"
+    },{
+      "name" : "Dirk Mennecke",
+      "mail" : "-"
     }]
   },
   "plugins": [

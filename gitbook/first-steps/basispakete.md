@@ -1,7 +1,7 @@
 # Include react-geo dependency
 
 `react-geo` is published at [https://www.npmjs.com/package/@terrestris/react-geo](https://www.npmjs.com/package/@terrestris/react-geo) and
-can be integrated and installed in your *{{ book.reactAppName }}* application via
+can be integrated and installed in your *React* application via
 basic `npm` commands.
 
 ## Add react-geo dependency

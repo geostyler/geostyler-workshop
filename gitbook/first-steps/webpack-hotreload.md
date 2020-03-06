@@ -1,11 +1,13 @@
 
-# Development notes
+# Entwicklungsserver
 
-`create-react-app` includes a [webpack](https://github.com/webpack/webpack) development server. This server allows you to 'hot deploy' your edited code. This means that your code changes will be immediatly visible in the browser.
+`create-react-app` enthält/inkludiert einen [webpack](https://github.com/webpack/webpack) Entwicklungsserver. 
+Dieser Server ermöglicht Ihnen das 'Hot Deployment' Ihres bearbeiteten Codes. Das bedeutet,
+dass Ihre Code-Änderungen sofort im Browser sichtbar sind.
 
-* Edit `src/App.js` to modify the example… and let the magic happen!
+* Bearbeiten Sie `src/App.js`, um das Beispiel zu modifizieren… and let the magic happen!
 
-[![](../screenshots/hallo_welt.png)](../screenshots/hallo_welt.png)
+[![](../images/hallo_welt.png)](../images/hallo_welt.png)
 
 
 ```javascript

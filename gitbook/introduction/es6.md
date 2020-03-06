@@ -1,6 +1,6 @@
 #ES6
 
-<img src="../images/ES6.png" alt="" style="width: 150px;"/>
+<img src="../images/es6-logo.jpg" alt="" style="width: 150px;"/>
 
 ES (ECMAScript) is a trademarked scripting-language specification created to standardize JavaScript.
 As the name suggests, ES6 (later renamed to ES2015) is the sixth edition and came with significant new syntax for writing complex applications,

@@ -2,7 +2,7 @@
 [npm](http://npmjs.com) is the package manager for Node.js (a JavaScript runtime environment) and the world’s largest software registry (more than 600k packages)
 with approximately 3 billion downloads per week.
 
-<img src="../images/npm_logo.png" alt="" style="width: 100px;"/>
+<img src="../images/npm-logo.png" alt="" style="width: 200px;"/>
 
 You can use npm to:
 
