@@ -6,6 +6,7 @@ by the use of [create-react-app](https://github.com/facebook/create-react-app),
 that will include a simple react-geo component. This application will be extended
 towards a fully functional mapping application little by little later on.
 
+
 Content of this chapter:
 
   * [Base React application](./create-react-app.md)
