@@ -1,8 +1,10 @@
 <center><img src="images/geo-styler-logo.jpg" style="width:650px;"/></center>
 
-# Workshop *{{ book.workshopName }}*
+# Workshop _{{ book.workshopName }}_
 
-Welcome to the workshop **{{ book.workshopName }}**. This workshop is designed to give you a comprehensive overview of [GeoStyler](https://github.com/geostyler/geostyler) as a library of geo-related application components available in combination with [React](https://github.com/facebook/react), [Ant Design](https://github.com/ant-design/ant-design) and [OpenLayers](https://github.com/openlayers/openlayers).
+Herzlich Willkommen beim **{{ book.workshopName }}** Workshop. Dieser Workshop soll Ihnen einen umfassenden
+Überblick über den GeoStyler als ein webbasiertes Werkzeug zur interaktiven Erstellung von kartographischen
+Style-Vorschriften für Geodaten geben.
 
 > **info**
 > If you want to visit this page on your own device or to print the PDF version,
@@ -10,25 +12,36 @@ Welcome to the workshop **{{ book.workshopName }}**. This workshop is designed t
 
 ## Setup
 
-The following instructions and exercises assume that you have some requirements fulfilled on your local machine. Please check if you have the consequent packages installed:
-  * A suitable text editor, e.g. the lightweight [Atom](https://atom.io/) editor.
-  * [NodeJS](https://nodejs.org/en/) in version 10 or higher.
+Die folgenden Anweisungen und Übungen setzen voraus, dass Sie eine Anforderungen an ihre lokale Maschine
+erfüllt haben. Bitte eprüfen Sie, ob Sie die entsprechenden Pakete installiert haben:
 
-All set? Then, lets' go!
+- Einen geeigneten Text Editor, wie z.B.[Atom](https://atom.io/).
+- [NodeJS](https://nodejs.org/en/) in Version 6.
 
-## Overview
+  > **info**
+  > Die aktuell auf ihrer lokalen Maschine installierte Node Version können Sie mit dem Befehl
+  > `node -v` in Ihrem Terminal ansehen. Falls diese Version nicht der
+  > für diesen Workshop notwendigen Version 6 entspricht, können Sie
+  > ganz einfach mit dem Befehl `nvm use 6` die Node Version wechseln.
 
-This workshop is presented as a set of modules. In each module you will perform
-tasks designed to achieve a specific goal for that module. Each module builds upon
-lessons learned in previous modules and is designed to iteratively build up your
-knowledge base.
+<br>
+Alles eingerichtet? Dann los gehts!
 
-* [Grundlagen](./introduction/README.md) - Dive into the basics of EcmaScript 6, React and npm.
-* [Erste Schritte](first-steps/index.md) - Learn how to create your own React app and how to include react-geo in it.
-* [Geostyler](geostyler/index.md) - Extend your application with some react-geo components.
+## Überblick
 
-## Authors
+Der Workshop ist aus einer Reihe von Modulen zusammengestellt. In jedem Modul werden
+Sie eine Reihe von Aufgaben lösen, um ein bestimmtes Ziel zu erreichen. Jedes Modul baut
+Ihre Wissensbasis iterativ auf.
+
+Die folgenden Module werden in diesem Workshop behandelt:
+
+- [Grundlagen](./introduction/README.md) - Tauchen Sie in die Grundlagen von EcmaScript 6, React und npm ein.
+- [Erste Schritte](first-steps/index.md) - Lernen Sie, wie Sie Ihre eigene React-App erstellen und wie Sie react-geo darin einbinden können.
+- [Geostyler](geostyler/index.md) - Erweitern Sie ihre Anwendung mit GeoStyler.
+
+## Authoren
 
 {% for author in book.authors %}
-  - {{ author.name }} ([{{ author.mail }}](mailto:{{ author.mail }}))
-{% endfor %}
+
+- {{ author.name }} ([{{ author.mail }}](mailto:{{ author.mail }}))
+  {% endfor %}

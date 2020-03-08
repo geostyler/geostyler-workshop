@@ -1,13 +1,17 @@
 # React
 
-<img src="../images/react-logo.png" alt="" style="width: 250px;"/>
+<img src="../images/react-logo.png" alt="" style="width: 350px;"/>
 
-[React](https://reactjs.org) is a modern and open-source JavaScript library for building user interfaces based on ES6. Originally, it has been developed
-by a software engineer at Facebook and is still being maintained by Facebook (among others).
+[React](https://reactjs.org) ist eine moderne und quelloffene JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen auf der Basis von ES6.
+Ursprünglich wurde sie entwickelt von einem Software-Ingenieur bei Facebook und wird weiterhin von Facebook (unter anderem) gewartet.
 
-React allows developers to create large web-applications that use data and can change over time without reloading the page. It aims primarily to provide speed, simplicity, and scalability. React processes only user interfaces in applications. This corresponds to View in the Model-View-Controller (MVC) pattern, and can be used in combination with other JavaScript libraries or frameworks in MVC, such as AngularJS.
+Mit React können Entwickler große Webanwendungen erstellen, die Daten verwenden und sich im Laufe der Zeit ändern können, ohne die
+Seite neu zu laden. Es zielt in erster Linie auf Geschwindigkeit, Einfachheit und Skalierbarkeit ab. React verarbeitet nur
+Benutzeroberflächen in Anwendungen. Dies entspricht dem View im Model-View-Controller (MVC)-Muster
+und kann in Kombination mit anderen JavaScript-Bibliotheken oder Frameworks in MVC, wie z.B. AngularJS, verwendet werden.
 
-The smallest React example looks like this:
+Das kleinste React-Beispiel sieht wie folgt aus:
+
 ```
 ReactDOM.render(
   <h1>Hello, world!</h1>,
@@ -15,30 +19,31 @@ ReactDOM.render(
 );>
 ```
 
-Check the [docs](https://reactjs.org/docs/hello-world.html) and [Tutorial](https://reactjs.org/tutorial/tutorial.html) for more information.
+Folgen Sie den [docs](https://reactjs.org/docs/hello-world.html) und dem [Tutorial](https://reactjs.org/tutorial/tutorial.html) für weitere Informationen.
 
 ## Props
 
-Props are the component's configurations that you pass to instances. They are received from the above component and immutable.
-For detailed information check [Components and Props](https://reactjs.org/docs/components-and-props.html)
-
+Props sind die Konfigurationen der Komponente, die Sie an Instanzen übergeben. Sie werden von der oben genannten Komponente
+empfangen und sind unveränderlich. Ausführliche Informationen finden Sie unter [Components und Props](https://reactjs.org/docs/components-and-props.html).
 
 ## State
 
-The state stores internal values of a component. It's a *serializable* representation of one point in time—a snapshot. The state can be manipulated within a component via `setState`. For detailed information check [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
-
+Die state speichert intere Werte einer Komponente. Es handelt sich hier um eine _serialisierbare_ Darstellung eiens Zeitpunkts -
+eine Momentaufnahme. Der Zustand kann innerhalb einer Komponente über `setState` manipuliert werden. Ausführliche Informationen finden Sie unter
+[State und Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html).
 
 ## Lifecycle
 
 ![](../images/react_lifecycle.png)
-[Image source](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/), last accessed 01/03/2019
- 
-Check [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
+[Bildquelle](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/), letzter Zugriff 08.04.2020.
 
+Siehe [State und Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 
 # JSX
 
-React components are typically written in JSX, a JavaScript extension syntax allowing quoting of HTML and using HTML tag syntax to render subcomponents. HTML syntax is processed into JavaScript calls of the React framework. Developers may also write in pure JavaScript. An example of JSX code:
+React-Komponenten werden normalerweise in JSX geschrieben, einer JavaScript-Erweiterungssyntax, die das Zitieren von HTML und die
+Verwendung der HTML-Tag-Syntax zur Darstellung von Unterkomponenten ermöglicht. Die HTML-Syntax wird in JavaScript-Aufrufe
+des React-Frameworks verarbeitet. Entwickler können auch in reinem JavaScript schreiben. Ein Beispiel für JSX-Code:
 
 ```
 import React from 'react';
@@ -57,4 +62,3 @@ class App extends React.Component {
 
 export default App;
 ```
-Syntactic sugar for React

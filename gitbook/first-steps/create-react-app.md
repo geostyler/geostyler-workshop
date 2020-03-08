@@ -1,31 +1,48 @@
 # React Applikation erstellen
 
-Natürlich könnten wir diesen Workshop damit beginnen, dass wir eine auf 
-React basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen 
-können, wäre dies eine schwierige Aufgabe für den Anfang. Wir wollen also direkt 
-in react-geo eintauchen, ohne die Notwendigkeit, alle Entwicklungswerkzeuge 
-zusammenzuhalten, um eine Webanwendung zum Laufen zu bringen. Glücklicherweise 
-gibt es ein Projekt, mit dem wir eine Anwendung für uns generieren können 
+Die für diesen Workshop notwendigen Materialien können Sie unter folgendem [Link](), oder direkt
+per [GitHub]() clonen, oder herunterladen.
+In diesem Ordner befinden sich alle Skripte um die Anwendung zum Laufen zu bringen.
+<br><br>
+
+> **info**
+> Da dieser Workshop den GeoStyler thematisiert, ist es nicht zwingend relevant  
+> den Aufbau und Inhalt des Ordners und der sich dort vorhandenen Skripte zu kennen.
+> Hauptsächlich ist die `App.js` für diesen Workshop relevant.
+
+<br>
+Natürlich könnten wir diesen Workshop damit beginnen, dass wir eine auf
+React basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen
+können, wäre dies eine schwierige Aufgabe für den Anfang. Wir wollen also direkt
+in react-geo eintauchen, ohne die Notwendigkeit, alle Entwicklungswerkzeuge
+zusammenzuhalten, um eine Webanwendung zum Laufen zu bringen. Glücklicherweise
+gibt es ein Befehl, mit dem wir eine Anwendung für uns generieren können
 (auch ohne jegliche Konfiguration!): [create-react-app](https://github.com/facebook/create-react-app).
 
-Die Erstellung einer neuen Anwendung ist einfach. Navigieren Sie hierfür zu einem 
-Ordner Ihrer Wahl und erstellen Sie eine neue Anwendung mit dem Namen *{{ book.reactAppName }}* 
-innerhalb dieses Verzeichnisses:
+Die Erstellung einer neuen Anwendung ist einfach. Hierfür muss nur zu einem
+Ordner Ihrer Wahl navigiert werden und dort mit dem Namen _{{ book.reactAppName }}_ eine Anwendung
+innerhalb dieses Verzeichnisses erstellt werden:
 
 <pre><xmp>npx create-react-app {{ book.reactAppName }}</xmp></pre>
 
-Dies wird eine Weile dauern. Sobald die Erstellung abgeschlossen ist, können Sie sie mit 
-folgendem Befehl in den Ordner des Projektes navigieren:
+Dies wird eine Weile dauern. Sobald die Erstellung abgeschlossen ist, kann mit
+folgendem Befehl in den Ordner des Projektes navigiert werden:
 
 <pre><xmp>cd {{ book.reactAppName }}</xmp></pre>
 
-Nun können wir endlich den Entwicklungsserver starten. Geben Sie hierfür den folgenden Befehl in Ihr Terminal ein:
+Nun kann endlich der Entwicklungsserver gestartet. Hierfür muss folgender Befehl in das Terminal eingegeben werden:
 
 ```
 npm start
 ```
 
+[![](../images/cra-startpage.png)](../images/cra-startpage.png)
+
+Aufgabe 1.
+Navigieren Sie in den Ordner des Projekts und führen Sie den Befehl `npm start` aus.
+
+> **info**
+> Dies wird nur funktionieren, wenn Sie node (Version 6), sowie npm und nvm erfolgreich auf ihrer lokalen Maschine installiert haben.
+> Der Befehl, um node Version 6 zu aktivieren, lautet `nvm use 6`.
 
 Um die Anwendung in Ihrem Browser anzuzeigen, öffnen Sie bitte [http://localhost:3000/](http://localhost:3000/).
-
-[![](../images/cra-startpage.png)](../images/cra-startpage.png)

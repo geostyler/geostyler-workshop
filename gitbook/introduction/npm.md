@@ -1,35 +1,36 @@
 # npm
-[npm](http://npmjs.com) is the package manager for Node.js (a JavaScript runtime environment) and the world’s largest software registry (more than 600k packages)
-with approximately 3 billion downloads per week.
+
+[npm](http://npmjs.com) ist der Paketmanager für Node.js (eine JavaScript-Laufzeitumgebung)
+und die weltweit größte Software-Registry (mehr als 600k Pakete)
+mit etwa 3 Milliarden Download pro Woche
 
 <img src="../images/npm-logo.png" alt="" style="width: 200px;"/>
 
-You can use npm to:
+Sie können npm verwenden, um:
 
-* Adapt packages to your apps, or incorporate them as they are.
+- Pakete an Ihre Anwendungen anzupassen oder sie so einbinden, wie sie sind.
 
-* Download standalone tools you can use right away.
+- Eigenständige Tools herunterzuladen, die Sie sofort verwenden können.
 
-* Run packages without downloading using npx.
+- Pakete ohne Herunterladen mit npx auszuführen.
 
-* Share code with any npm user, anywhere.
+- Code mit jedem npm-Benutzer überall zu teilen.
 
-* Restrict code to specific developers.
+- Den Code auf bestimmte Entwickler zu beschränken.
 
-* Form virtual teams (orgs).
+- Virtuelle Teams (Orgs) zu bilden.
 
-* Manage multiple versions of code and code dependencies.
+- Mehrere Versionen von Code und Code-Abhängigkeiten (dependencies) zu verwalten.
 
-* Update applications easily when underlying code is updated.
+- Anwendungen zu aktualisieren, wenn der zugrunde Liegende Code aktualisiert wird.
 
-* Discover multiple ways to solve the same puzzle.
-
-* Find other developers who are working on similar problems.
+- Andere Entwickler zu finden, die an ähnlichen Problemen arbeiten.
 
 ### package.json
 
-The command `npm init` in your project folder opens an interactive dialogue to establish a npm project.
-The result is the `package.json` including all important settings, scripts and dependencies of your project.
+Der Befehl `npm init` in Ihrem Projektordner öffnet einen interaktiven Dialog zur Einrichtung eines npm-Projekts.
+Das Ergebnis ist das `package.json` mit allen wichtigen Einstellungen, Skripten und Abhängigkeiten (dependencies)
+Ihres Projekts.
 
 ```
 {
@@ -49,20 +50,21 @@ The result is the `package.json` including all important settings, scripts and d
 }
 ```
 
-Please check the [npm docs](https://docs.npmjs.com/) for further information.
+Bitte lesen Sie die [npm docs](https://docs.npmjs.com/) für weitere Informationen.
 
-### Install packages with npm
+### Pakete mit npm installieren
 
-The most common way to install new packages with npm is via the [CLI](https://docs.npmjs.com/cli/npm).
-To install a package simply type:
+Die gebräuchlichste Art, neue Pakete mit npm zu installieren, ist über die [Kommandozeile](https://docs.npmjs.com/cli/npm).
+Um ein Paket zu installieren, geben Sie einfach folgendes ein:
 
 `npm install packagename`
 
-You find the installed packages in the `node_modules` subfolder.
+Sie finden die installierten Pakete im Unterordner `node_modules`.
 
 # Node version manager NVM
-* bash script to manage multiple active node.js versions
-* See [here](https://github.com/creationix/nvm)
+
+- bash-Skript zur Verwaltung mehrerer aktiver node.js-Versionen
+- Siehe [hier](https://github.com/creationix/nvm)
 
 ```
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
