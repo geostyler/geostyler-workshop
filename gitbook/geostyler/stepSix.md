@@ -1,7 +1,7 @@
 # OpenLayers Parser
 
 In diesem Unterkapitel kommt erstmals ein Parser zum Einsatz. Dieser wird direkt
-von der Geostyler Bibliothek importiert und in der Variable `olParser` referenziert.
+von der Geostyler Bibliothek importiert und in der Variable `olParser` referenziert (s. folgener Code-Block). Der Parser wird verwendet, um von bereits existierenden Style-Vorschriften zu Geostyler-Style zu transformieren
 
 ```javascript
 import OpenLayersParser from "geostyler-openlayers-parser";
@@ -14,13 +14,16 @@ Desweiteren wird ein _defaultOlStyle_ definiert (ebenfalls aus der `helper.js` D
 import { getDefaultStyle } from "./helper";
 const defaultOlStyle = getDefaultStyle();
 ```
+Der `OpenLayersParser` ermöglicht hierbei, dass die Style-Vorschriften in den Geostyler-Style überführt werden.
+<br><br>
+Darüber hinaus beinhaltet die Anwendung nun ein `setStyle()` - handling. Dies sorgt dafür, dass der 
+`defaultOlStyle` durch einen neuen Style ersetzt werden kann.  
 
+***Aufgabe 1.***
 Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
 Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
 
----
-
----
+[![](../images/stepSixImage.png)](../images/stepSixImage.png)
 
 ```javascript
 import React, { useState, useEffect } from "react";

@@ -1,18 +1,7 @@
 # React Applikation erstellen
 
-Die für diesen Workshop notwendigen Materialien können Sie unter folgendem [Link](), oder direkt
-per [GitHub]() clonen, oder herunterladen.
-In diesem Ordner befinden sich alle Skripte um die Anwendung zum Laufen zu bringen.
-<br><br>
-
-> **info**
-> Da dieser Workshop den GeoStyler thematisiert, ist es nicht zwingend relevant  
-> den Aufbau und Inhalt des Ordners und der sich dort vorhandenen Skripte zu kennen.
-> Hauptsächlich ist die `App.js` für diesen Workshop relevant.
-
-<br>
 Natürlich könnten wir diesen Workshop damit beginnen, dass wir eine auf
-React basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen
+react basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen
 können, wäre dies eine schwierige Aufgabe für den Anfang. Wir wollen also direkt
 in react-geo eintauchen, ohne die Notwendigkeit, alle Entwicklungswerkzeuge
 zusammenzuhalten, um eine Webanwendung zum Laufen zu bringen. Glücklicherweise
@@ -36,13 +25,13 @@ Nun kann endlich der Entwicklungsserver gestartet. Hierfür muss folgender Befeh
 npm start
 ```
 
-[![](../images/cra-startpage.png)](../images/cra-startpage.png)
-
-Aufgabe 1.
+***Aufgabe 1.***
 Navigieren Sie in den Ordner des Projekts und führen Sie den Befehl `npm start` aus.
 
 > **info**
 > Dies wird nur funktionieren, wenn Sie node (Version 6), sowie npm und nvm erfolgreich auf ihrer lokalen Maschine installiert haben.
 > Der Befehl, um node Version 6 zu aktivieren, lautet `nvm use 6`.
 
-Um die Anwendung in Ihrem Browser anzuzeigen, öffnen Sie bitte [http://localhost:3000/](http://localhost:3000/).
+Um die Anwendung in Ihrem Browser anzuzeigen, öffnen Sie bitte [http://localhost:3000/](http://localhost:3000/). Ihr Screen sollte nun wie folgt aus:
+
+[![](../images/cra-startpage.png)](../images/cra-startpage.png)

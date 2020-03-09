@@ -1,11 +1,10 @@
 # Boxen hinzufügen
 
 In diesem Abschnitt werden wir der Anwendung drei Boxen (div-Elemente, die durch Angabe von
-width & height wie eine Box aussehen) hinzufügen, welche mit einem scroll
-eventlistener versehen sind. Ziel ist es, den Style des Layers (welcher in Schritt X hinzugefügt wird)
-abhängig von der aktuell im Viewport zu sehenden Box zu verändern.
+width & height wie eine Box aussehen) hinzufügen, welche mit einem *scroll
+eventlistener* versehen sind. Ziel ist es, den Style des Layers (welcher im folgenden Kapitel hinzugefügt wird) abhängig von der aktuell im Viewport zu sehenden Box zu verändern.
 
-Die jeweiligen Boxen wurden wie folgt erstellt:
+Die jeweiligen Boxen wurden wie folgt erstellt (hier beispielhaft die erste Box):
 
 ```javascript
 <div id='ws-overlay-2' className='ws-overlay'>
@@ -14,8 +13,7 @@ Die jeweiligen Boxen wurden wie folgt erstellt:
 </div>
 ```
 
-Der `App.js` Datei wird durch den Befehl `import isElementInViewport from "./viewportHelper";` eine
-Funktion/Klasse/Skript? zugänglich gemacht, welche in der `viewportHelper.js` Datei definiert ist.
+Der `App.js` Datei wird durch den Befehl `import isElementInViewport from "./viewportHelper";` eine Funktion zugänglich gemacht, welche in der `viewportHelper.js` Datei definiert ist.
 
 Diese Funktion erkennt die sich aktuell im Viewport befindende sichtbare Box.
 
@@ -23,13 +21,12 @@ Diese Funktion erkennt die sich aktuell im Viewport befindende sichtbare Box.
 > Für diesen Workshop reicht es zu wissen, dass es diese Funktion gibt. Eine genaue Erläuterung des sich
 > in der `vieportHelper.js` Datei befindenden Codes ist für diesen Workshop somit nicht relevant.
 
-<br>
+***Aufgabe 1.***
 Ersetzen Sie nun den gesamten Code ihrer `App.js` Datei mit dem Code im unteren Bereich dieser Seite.
 Ihre Anwendung sollte, insofern Sie die Datein gespeichert haben, nun wie folgt aussehen:
 
----
 
----
+[![](../images/stepTwoImage.png)](../images/stepTwoImage.png)
 
 ```javascript
 import React, { useState, useEffect } from "react";

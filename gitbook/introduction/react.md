@@ -3,9 +3,9 @@
 <img src="../images/react-logo.png" alt="" style="width: 350px;"/>
 
 [React](https://reactjs.org) ist eine moderne und quelloffene JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen auf der Basis von ES6.
-Ursprünglich wurde sie entwickelt von einem Software-Ingenieur bei Facebook und wird weiterhin von Facebook (unter anderem) gewartet.
+Ursprünglich wurde react von einem Software-Ingenieur bei Facebook entwickelt und wird weiterhin von Facebook (unter anderem) gewartet.
 
-Mit React können Entwickler große Webanwendungen erstellen, die Daten verwenden und sich im Laufe der Zeit ändern können, ohne die
+Mit React können Entwickler Webanwendungen erstellen, die Daten verwenden, welche sich im Laufe der Zeit ändern können, ohne die
 Seite neu zu laden. Es zielt in erster Linie auf Geschwindigkeit, Einfachheit und Skalierbarkeit ab. React verarbeitet nur
 Benutzeroberflächen in Anwendungen. Dies entspricht dem View im Model-View-Controller (MVC)-Muster
 und kann in Kombination mit anderen JavaScript-Bibliotheken oder Frameworks in MVC, wie z.B. AngularJS, verwendet werden.
@@ -28,7 +28,7 @@ empfangen und sind unveränderlich. Ausführliche Informationen finden Sie unter
 
 ## State
 
-Die state speichert intere Werte einer Komponente. Es handelt sich hier um eine _serialisierbare_ Darstellung eiens Zeitpunkts -
+Die state speichert intere Werte einer Komponente. Es handelt sich hier um eine _serialisierbare_ Darstellung eines Zeitpunkts -
 eine Momentaufnahme. Der Zustand kann innerhalb einer Komponente über `setState` manipuliert werden. Ausführliche Informationen finden Sie unter
 [State und Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html).
 

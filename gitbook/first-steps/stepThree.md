@@ -1,9 +1,8 @@
 # Layer hinzufügen
 
-In diesem Unterkapitel werden wir der `map` Variable einen weiteren Layer zuweisen (neben dem bereits im Kapitel
-2.4 hinzugefügten base-Layer).
-<br>
-Dafür wird der covidDeath Datensatz zunächst importiert (1), der `vector` Variable zugewisen
+In diesem Unterkapitel werden wir der `map` Variable einen weiteren Layer zuweisen (neben dem bereits im Kapitel 2.5 hinzugefügten base-Layer).
+<br><br>
+Dafür wird der covidDeath Datensatz zunächst importiert (1), der `vector` Variable zugewiesen
 und in der `map` Variable referenziert (2).
 
 (1)
@@ -32,12 +31,17 @@ const map = new OlMap({
 });
 ```
 
+**Aufgabe 1.**
+Erstellen Sie nun einen neuen Ordner mit dem Namen `data` innerhalb des `src`-Ordners.
+Fügen Sie anschließend die `covid-death.json` Datei in den `data` Ordner ein.
+
+***Aufgabe 2.***
 Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
 Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
 
----
 
----
+[![](../images/stepThreeImage.png)](../images/stepThreeImage.png)
+
 
 ```javascript
 import React, { useState, useEffect } from "react";

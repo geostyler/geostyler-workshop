@@ -1,15 +1,22 @@
 # Wichtige Imports
 
-In diesem Unterkapitel wird der Geostyler der Anwendung zugänglich gemacht. Dies erfolgt
-durch den Import:
+In diesem Unterkapitel wird der Geostyler der Anwendung zugänglich gemacht. 
+Bevor sie Geostyler verwenden können, muss dieser zunächst durch den Befehl
+
+```javascript
+npm install geostyler
+```
+installiert werden.
+
+Die anschließende Einbindung in die Anwendung erfolgt durch den Import:
 
 ```javascript
 import { Style as GsStyle } from "geostyler";
 ```
 
-Desweiteren wird ein Button und ein Drawer von antd importiert. Der Button sorgt dafür, dass
-sich der Drawer per toggle ein- und ausblenden lässt. Innerhalb des Drawers befindet sich
-die oben importierte `<GsStyle />` Komponente.
+Innerhalb des Drawers, welcher in Kapitel 2.8 hinzugefügt wurde, befindet sich
+die oben importierte `<GsStyle />` Komponente (s. folgendender Code-Block). Durch einen 
+Klick auf den Button wird somit der Drawer und der Geostyler sichtbar.
 
 ```javascript
 <Drawer
@@ -26,17 +33,17 @@ die oben importierte `<GsStyle />` Komponente.
 </Drawer>
 ```
 
+***Aufgabe 1.***
 Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
+Codes ersetzen, speichern und auf den Button klicken, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
 
----
+[![](../images/stepFiveImage.png)](../images/stepFiveImage.png)
 
----
 
-Per Klick auf den Button öffnet sich der Drawer und der Geostyler wird sichtbar. Es fällt jedoch auf, dass...
+Auffällig ist hierbei, dass...
 <br>
 Weiteres kann aktuell noch nicht gemacht werden. Der Anwendung bedarf es nun den notwendigen Parsern, um
-SLD bspw. in OL zu überführen. Dies wird im folgenden Kapitel umgesetzt.
+SLD bspw. in OpenLayers Styles zu überführen. Dies wird in den folgenden Kapiteln umgesetzt.
 <br>
 
 ```javascript

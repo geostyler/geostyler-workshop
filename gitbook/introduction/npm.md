@@ -2,7 +2,7 @@
 
 [npm](http://npmjs.com) ist der Paketmanager für Node.js (eine JavaScript-Laufzeitumgebung)
 und die weltweit größte Software-Registry (mehr als 600k Pakete)
-mit etwa 3 Milliarden Download pro Woche
+mit etwa 3 Milliarden Downloads pro Woche
 
 <img src="../images/npm-logo.png" alt="" style="width: 200px;"/>
 
@@ -22,7 +22,7 @@ Sie können npm verwenden, um:
 
 - Mehrere Versionen von Code und Code-Abhängigkeiten (dependencies) zu verwalten.
 
-- Anwendungen zu aktualisieren, wenn der zugrunde Liegende Code aktualisiert wird.
+- Anwendungen zu aktualisieren, wenn der zugrunde liegende Code aktualisiert wird.
 
 - Andere Entwickler zu finden, die an ähnlichen Problemen arbeiten.
 
@@ -50,7 +50,7 @@ Ihres Projekts.
 }
 ```
 
-Bitte lesen Sie die [npm docs](https://docs.npmjs.com/) für weitere Informationen.
+Für weitere Informationen sei hiermit auf die [npm docs](https://docs.npmjs.com/) hingewiesen.
 
 ### Pakete mit npm installieren
 

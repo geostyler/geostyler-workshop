@@ -1,13 +1,46 @@
-# IDK what happens here
+# Drawer und Toggle
 
-???
+In diesem Unterkapitel wird ein Button und ein Drawer von [antd](https://ant.design/components/button/) importiert. Der Button sorgt dafür, dass sich der Drawer per toggle ein- und ausblenden lässt. 
 
+```javascript
+<Drawer
+  title='GeoStyler Editor'
+  placement='top'
+  closable={true}
+  onClose={() => {
+    setDrawerVisible(false);
+  }}
+  visible={drawerVisible}
+  mask={false}
+></Drawer>
+```
+
+Wie anhand des folgenden Code-Auszuges zu erkennen ist, geschieht der toggle-Effekt durch die Veränderung des aktuellen States (`currentState => !currentState`). Der Button und Drawer sind hierbei durch die `setDrawerVisible()`- Funktion vernüpft.
+
+```javascript
+      <Button
+        className='ws-toggle-editor-btn'
+        type='primary'
+        onClick={() => {
+          setDrawerVisible(currentState => !currentState);
+        }}
+      >
+        Toggle Editor
+      </Button>
+```
+
+> **info**
+> Hier finden Sie weitere Informationen bezüglich [State](https://reactjs.org/docs/state-and-lifecycle.html) und [setState()](https://reactjs.org/docs/faq-state.html). 
+
+***Aufgabe 1.***
 Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
+Codes ersetzen und speichern, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
 
----
+<br>
 
----
+[![](../images/stepFourImage.png)](../images/stepFourImage.png)
+
+Per Klick auf den Button öffnet sich folglich der Drawer (in der oberen Abbildung bereits geöffnet).
 
 ```javascript
 import React, { useState, useEffect } from "react";

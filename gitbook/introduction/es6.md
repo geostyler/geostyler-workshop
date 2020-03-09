@@ -58,7 +58,7 @@ console.log(`Year ${a}`);
 
 ### Destructuring assignment
 
-Siehe auch [hier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+Siehe auch [hier](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 _Beispiel 1_: Objekt Destrukturierung (Object destructuring)
 

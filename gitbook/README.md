@@ -2,18 +2,17 @@
 
 # Workshop _{{ book.workshopName }}_
 
-Herzlich Willkommen beim **{{ book.workshopName }}** Workshop. Dieser Workshop soll Ihnen einen umfassenden
-Überblick über den GeoStyler als ein webbasiertes Werkzeug zur interaktiven Erstellung von kartographischen
-Style-Vorschriften für Geodaten geben.
+Herzlich Willkommen beim **{{ book.workshopName }}**. Dieser Workshop soll Ihnen einen umfassenden
+Überblick über den GeoStyler als ein webbasiertes Werkzeug zur interaktiven Erstellung von kartographischen Style-Vorschriften für Geodaten geben.
 
 > **info**
-> If you want to visit this page on your own device or to print the PDF version,
-> you can download the workshop materials [here]({{ book.workshopDownloadUrl }}).
+> Wenn Sie diese Seite auf Ihrem eigenen Gerät besuchen oder die PDF-Version ausdrucken möchten,
+> dann können Sie die Workshop-Materialien [hier]({{ book.workshopDownloadUrl }}) herunterladen.
 
 ## Setup
 
-Die folgenden Anweisungen und Übungen setzen voraus, dass Sie eine Anforderungen an ihre lokale Maschine
-erfüllt haben. Bitte eprüfen Sie, ob Sie die entsprechenden Pakete installiert haben:
+Die folgenden Anweisungen und Übungen setzen voraus, dass Sie bestimmte Anforderungen an ihre lokale Maschine
+erfüllt haben. Bitte prüfen Sie, ob Sie folgende Voraussetzungen installiert haben:
 
 - Einen geeigneten Text Editor, wie z.B.[Atom](https://atom.io/).
 - [NodeJS](https://nodejs.org/en/) in Version 6.
@@ -25,7 +24,7 @@ erfüllt haben. Bitte eprüfen Sie, ob Sie die entsprechenden Pakete installiert
   > ganz einfach mit dem Befehl `nvm use 6` die Node Version wechseln.
 
 <br>
-Alles eingerichtet? Dann los gehts!
+Alles eingerichtet? Dann los geht's!
 
 ## Überblick
 

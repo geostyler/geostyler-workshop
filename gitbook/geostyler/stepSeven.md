@@ -1,6 +1,32 @@
-# Step 7
+# Layer - Geostyler Verknüpfung
 
-Your final solution should look like the following snippet:
+In diesem Unterkapitel wird der Geostyler mit dem Layer verküpft.
+
+???
+
+Darüber hinaus wird durch folgende Funktion die Karte jedes mal geupdated, 
+wenn sich entweder eine andere Box im Viewport befindet, oder der Style geändert wird.
+
+```javascript
+  useEffect(() => {
+    // update the map layer when either visibleBox or styles changes
+    var newStyle = styles[visibleBox];
+    if (newStyle) {
+      olParser
+        .writeStyle(newStyle)
+        .then(olStyle => {
+          vector.setStyle(olStyle);
+        })
+        .catch(error => console.log(error));
+    }
+  });
+```
+
+***Aufgabe 1.***
+Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
+Codes ersetzen und speichern, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
+
+[![](../images/stepSevenImage.png)](../images/stepSevenImage.png)
 
 ```javascript
 import React, { useState, useEffect } from "react";

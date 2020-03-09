@@ -4,9 +4,10 @@
 Dieser Server ermöglicht Ihnen das 'Hot Deployment' Ihres bearbeiteten Codes. Das bedeutet,
 dass Ihre Code-Änderungen sofort im Browser sichtbar sind.
 
-- Bearbeiten Sie `src/App.js`, um das Beispiel zu modifizieren… and let the magic happen!
+***Aufgabe 1.***
+Bearbeiten Sie `src/App.js` (beipielsweise wie im Code unten), um das Beispiel zu verändern and let the magic happen!
 
-[![](../images/hallo_welt.png)](../images/hallo_welt.png)
+[![](../images/halloWelt.png)](../images/halloWelt.png)
 
 ```javascript
 import React from "react";
