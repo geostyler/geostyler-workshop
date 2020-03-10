@@ -1,10 +1,45 @@
-# Summary
+# Wichtige Imports
 
-Glückwunsch! Sie haben den Geostyler Workshop beendet!
+In diesem Unterkapitel wird der GeoSstyler der Anwendung zugänglich gemacht. 
 
-In diesem Workshop haben Sie gelernt wie Sie Ihre erste react-basierte Webanwendung mit Geostyler Funktionalitäten errichten. Durch das Hinzufügen der react-geo Komponente `MapComponent`, sowie der Einbindung von Geostyler inklusive deren Parser haben Sie (einige) Möglichkeiten des Geostylers kennengelernt, um damit Geodaten webbasiert nach Ihren Bedürfnissen graphisch ansprechend darzustellen.
+Die anschließende Einbindung in die Anwendung erfolgt durch den Import:
 
-Und hier ist der vollständige Source-Code.
+```javascript
+import { Style as GsStyle } from "geostyler";
+```
+
+Innerhalb des Drawers, welcher in Kapitel 2.8 hinzugefügt wurde, befindet sich
+die oben importierte `<GsStyle />` Komponente (s. folgendender Code-Block). Durch einen 
+Klick auf den Button wird somit der Drawer und der Geostyler sichtbar.
+
+```javascript
+<Drawer
+  title='GeoStyler Editor'
+  placement='top'
+  closable={true}
+  onClose={() => {
+    setDrawerVisible(false);
+  }}
+  visible={drawerVisible}
+  mask={false}
+>
+  <GsStyle compact={true} />
+</Drawer>
+```
+
+Durch die Einbindung des GeoStylers ist im Grund alles für die Inbetriebnahme gegeben, 
+jedoch fehlt hierbei noch die Verknüpfung mit der Applikation und den Daten.
+Der Anwendung bedarf es nun den notwendigen Parsern, um SLD bspw. in OpenLayers 
+Styles zu überführen. Darauf wird in den folgenden Kapiteln eingegangen.
+
+***Aufgabe 1.***
+Importieren Sie den `GeoStyler` und fügen diese in den Drawer ein.
+
+Die Applikation sollte nun wie folgt aussehen:
+
+[![](../images/stepFiveImage.png)](../images/stepFiveImage.png)
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -14,9 +49,6 @@ import OlView from "ol/View";
 import DragPan from "ol/interaction/DragPan";
 import { Drawer, Button } from "antd";
 
-import OpenLayersParser from "geostyler-openlayers-parser";
-import GeoJSONParser from "geostyler-geojson-parser";
-
 import isElementInViewport from "./viewportHelper";
 
 import "./App.css";
@@ -24,15 +56,13 @@ import "ol/ol.css";
 import "antd/dist/antd.css";
 import "./Workshop.css";
 import Attributions from "./Attributions";
-import { getDefaultStyle, getBaseLayer, getCovidLayer } from "./helper";
+import { getBaseLayer, getCovidLayer } from "./helper";
 
 import { MapComponent } from "@terrestris/react-geo";
 
 import { Style as GsStyle } from "geostyler";
 
 import covidDeath from "./data/covid-death.json";
-
-const defaultOlStyle = getDefaultStyle();
 
 var base = getBaseLayer();
 var vector = getCovidLayer(covidDeath);
@@ -49,52 +79,9 @@ const map = new OlMap({
   interactions: [new DragPan()]
 });
 
-const olParser = new OpenLayersParser();
-const geojsonParser = new GeoJSONParser();
-
 function App() {
-  let [styles, setStyles] = useState([]);
   let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
-  let [data, setData] = useState();
-
-  useEffect(() => {
-    // on page init parse default style once
-    // and setup the styles array
-    olParser
-      .readStyle(defaultOlStyle)
-      .then(gsStyle => {
-        const newStyles = [];
-        for (var i = 0; i < 3; i++) {
-          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
-        }
-        setStyles(newStyles);
-      })
-      .catch(error => console.log(error));
-  }, []);
-
-  useEffect(() => {
-    // parse data as soon as it changes
-    geojsonParser
-      .readData(covidDeath)
-      .then(gsData => {
-        setData(gsData);
-      })
-      .catch(error => console.log(error));
-  }, [data]);
-
-  useEffect(() => {
-    // update the map layer when either visibleBox or styles changes
-    var newStyle = styles[visibleBox];
-    if (newStyle) {
-      olParser
-        .writeStyle(newStyle)
-        .then(olStyle => {
-          vector.setStyle(olStyle);
-        })
-        .catch(error => console.log(error));
-    }
-  });
 
   useEffect(() => {
     // add scroll eventlistener
@@ -148,24 +135,7 @@ function App() {
         visible={drawerVisible}
         mask={false}
       >
-        <GsStyle
-          style={styles[visibleBox]}
-          compact={true}
-          data={data}
-          onStyleChange={newStyle => {
-            olParser
-              .writeStyle(newStyle)
-              .then(olStyle => {
-                vector.setStyle(olStyle);
-              })
-              .catch(error => console.log(error));
-            setStyles(oldStyles => {
-              const newStyles = JSON.parse(JSON.stringify(oldStyles));
-              newStyles[visibleBox] = newStyle;
-              return newStyles;
-            });
-          }}
-        />
+        <GsStyle compact={true} />
       </Drawer>
       <span id='ws-overlay-1' className='ws-overlay'>
         <h1>Overlay {visibleBox + 1}</h1>
@@ -186,3 +156,6 @@ function App() {
 
 export default App;
 ```
+
+Im nächsten Unterkapitel werden wir einen `default Style` einbinden und einen Parser aus 
+der `GeoStyler` Bibliothek importieren.

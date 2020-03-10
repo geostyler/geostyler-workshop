@@ -1,31 +1,32 @@
+# Entwicklungsserver
 
-# Development notes
+`create-react-app` inkludiert einen [webpack](https://github.com/webpack/webpack) Entwicklungsserver.
+Dieser Server ermöglicht Ihnen das 'Hot Deployment' Ihres bearbeiteten Codes. Dies bedeutet,
+dass Ihre Code-Änderungen sofort im Browser sichtbar sind.
 
-`create-react-app` includes a [webpack](https://github.com/webpack/webpack) development server. This server allows you to 'hot deploy' your edited code. This means that your code changes will be immediatly visible in the browser.
+***Aufgabe 1.***
+Bearbeiten Sie `src/App.js` (beipielsweise wie im Code unten), um die Anwendung zu verändern.
 
-* Edit `src/App.js` to modify the example… and let the magic happen!
-
-[![](../screenshots/hallo_welt.png)](../screenshots/hallo_welt.png)
-
+[![](../images/halloWelt.png)](../images/halloWelt.png)
 
 ```javascript
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          className='App-link'
+          href='https://reactjs.org'
+          target='_blank'
+          rel='noopener noreferrer'
         >
           Hallo Welt!
         </a>
@@ -36,3 +37,7 @@ function App() {
 
 export default App;
 ```
+
+Wie wir den GeoStyler und weitere notwendige Pakete für diese 
+Anwendung installieren, werden wir uns im Folgenden genauer 
+anschauen.

@@ -1,65 +1,65 @@
-# Include react-geo dependency
+# GeoStyler dependency inkludieren
 
-`react-geo` is published at [https://www.npmjs.com/package/@terrestris/react-geo](https://www.npmjs.com/package/@terrestris/react-geo) and
-can be integrated and installed in your *{{ book.reactAppName }}* application via
-basic `npm` commands.
+Um die `GeoStyler` dependency hinzuzufügen, navigieren Sie bitte (falls noch nicht geschehen) zum Ordner
+Ihres Projektes und führen Sie dort folgenden Befehl aus
 
-## Add react-geo dependency
+```javascript
+npm install geostyler
+```
 
-To add the dependency `react-geo` please navigate to your project's folder
-(if not already done) and execute:
+> **info**
+> Für die Eingabe dieses Befehls müssen Sie ein neues Terminal öffnen und erneut zu Ihrem Ordner 
+> navigieren.
+
+Dies fügt die neuste Version von `GeoStyler` zu Ihrer lokalen `package.json` Datei hinzu und lädt 
+die Bibliothek in das Verzeichnis `node_modules`.
+
+## react-geo dependency hinzufügen
+
+Analog gilt dies für die `react-geo` dependency:
 
 ```
 npm i @terrestris/react-geo
 ```
 
-This will add the latest version of `react-geo` to your local `package.json` file
-(into the `dependencies` section) and download the distributed version of the
-library to the `node_modules` directory.
+## Ant Design und OpenLayers dependencies hinzufügen
 
-## Add Ant Design und OpenLayers dependencies
+Sie haben vielleicht bemerkt, dass der Schritt von oben einige Warnungen hervorgerufen hat, die `GeoStyler` einschließen:
 
-You may have noticed that the step from above has produced some warnings, which
-include `react-geo`:
+<pre><xmp>npm WARN geostyler@4.5.0 requires a peer of antd@3.x but none is installed. You must install peer dependencies yourself.
+npm WARN geostyler@4.5.0 requires a peer of ol@5.x but none is installed. You must install peer dependencies yourself.</xmp></pre>
 
-<pre><xmp>npm WARN @terrestris/react-geo@{{ book.reactGeoVersion }} requires a peer of antd@~3.0 but none is installed. You must install peer dependencies yourself.
-npm WARN @terrestris/react-geo@{{ book.reactGeoVersion }} requires a peer of ol@~5.0 but none is installed. You must install peer dependencies yourself.
-</xmp></pre>
-
-`npm` has three different types of dependencies:
+`npm` hat drei verschiedene Arten von dependencies:
 
 #### `dependencies`
 
-[dependencies](https://docs.npmjs.com/files/package.json#dependencies) are
-used to directly specify packages needed to *run* your application's code (e.g. a front-end
-library like [Bootstrap](https://getbootstrap.com/))
+[dependencies](https://docs.npmjs.com/files/package.json#dependencies) werden verwendet, um 
+Pakete direkt zu spezifizieren, die zum *ausführen* des Codes Ihrer Anwendung benötigt werden (z.B. eine 
+Frond-End Bibliothek wie [Bootstrap](https://getbootstrap.com/)).
+
 #### `devDependecies`
 
 [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies)
-are reserved to specify packages needed to *build* your application's code (e.g.
-test harnesses like [Jest](https://facebook.github.io/jest/) or transpilers like
+sind reserviert, um Pakete anzugeben, die zum *bauen* des Codes Ihrer Anwendung benötigt werden (z.B.
+test harnesses wie [Jest](https://facebook.github.io/jest/) oder Transpiler wie
 [Babel](https://babeljs.io/)).
+
 #### `peerDependencies`
 
-However, under some conditions, one wants to express
-the *compatibility* of a certain package with the host package and npm calls this
-dependency a [peerDependencies](https://docs.npmjs.com/files/package.json#peerdependencies).
-Ususally this is used to express the dependency of a plugin inside this host package
-or similiar. In `react-geo` we need to have `antd`, `ol` and `react` defined as peer
-dependencies due to scope issues, because all of them were usually referenced by
-the host package/the application itself in a certain version.
+Unter bestimmten Bedingungen möchte man jedoch die *Kompatibilität* eines bestimmten Pakets mit dem Host-Paket audrücken. Npm bezeichnet diese dependency als [peerDependencies](https://docs.npmjs.com/files/package.json#peerdependencies).
+Normalerweise wird dies verwendet, um die Abhängigkeit eines Plugins innerhalb dieses oder eines ähnlichen Host-Pakets auszudrücken. In `react-geo` müssen wir `antd`, `ol` und `react` als *peer dependencies* aufgrund von scope Problemen definieren, da sie alle normalerweise vom Host-Paket/er Anwendung selbst in einer bestimmten Version referenziert wurden.
 
-As `npm` handles dependencies hierachically, including those packages in `react-geo` twice would
-lead to two different dependencies available in your application at runtime. To
-share the dependencies between your host application and `react-geo`, we advice
-`react-geo` to use the dependencies given by the host package.
+Da `npm` Abhängigkeiten hierarchisch behandelt, würde die doppelte Einbeziehung dieser Pakete in `react-geo` zu zwei verschiedenen *dependencies* führen, die in Ihrer Anwendung zur Laufzeit verfügbar sind. Um die Abhängigkeiten zwischen Ihrer Host-Anwendung und `react-geo` zu teilen, empfehlen wir `react-geo`, die vom Host-Paket gegebenen *dependencies* zu verwenden.
 
-To meet these requirements we have to install the requested peer dependencies by
-ourselves with:
+Um diese Anforderungen zu erfüllen, müssen wir die gewünschten *peer dependencies* mit folgendem Befehl installieren:
 
 ```
-npm i antd ol
+npm i antd@3.x ol@6
 ```
 
-Now we're ready to make use of all `react-geo` components and utilities inside
-our *{{ book.reactAppName }}* application.
+Jetzt sind wir bereit, alle `react-geo` Komponenten innerhalb
+unserer *{{ book.reactAppName }}* Anwendung zu verwenden.
+
+Neben der grundlegenden React Anwendung werden wir im
+Folgenden Unterkapitel weitere Dateien für die CoVid-19 Map 
+erstellen.

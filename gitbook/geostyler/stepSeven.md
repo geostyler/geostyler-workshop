@@ -1,10 +1,34 @@
-# Summary
+# Layer - Geostyler Verknüpfung
 
-Glückwunsch! Sie haben den Geostyler Workshop beendet!
+In diesem Unterkapitel wird der Geostyler mit dem Layer verküpft.
 
-In diesem Workshop haben Sie gelernt wie Sie Ihre erste react-basierte Webanwendung mit Geostyler Funktionalitäten errichten. Durch das Hinzufügen der react-geo Komponente `MapComponent`, sowie der Einbindung von Geostyler inklusive deren Parser haben Sie (einige) Möglichkeiten des Geostylers kennengelernt, um damit Geodaten webbasiert nach Ihren Bedürfnissen graphisch ansprechend darzustellen.
+Darüber hinaus wird durch folgende Funktion die Karte jedes mal geupdated, 
+wenn sich entweder eine andere Box im Viewport befindet, oder der Style geändert wird.
 
-Und hier ist der vollständige Source-Code.
+```javascript
+  useEffect(() => {
+    // update the map layer when either visibleBox or styles changes
+    var newStyle = styles[visibleBox];
+    if (newStyle) {
+      olParser
+        .writeStyle(newStyle)
+        .then(olStyle => {
+          vector.setStyle(olStyle);
+        })
+        .catch(error => console.log(error));
+    }
+  });
+```
+
+***Aufgabe 1.***
+Ändern Sie den nun den Stil und Scrollen Sie hoch und runter (soweit, bis eine andere Box im Viewport sichtbar wird). Welche Veränderung wird sichtbar?
+
+[![](../images/stepSevenImage.png)](../images/stepSevenImage.png)
+<br>
+<br>
+Wie Sie anhand der Abbildung erkennen können, wurde die Farbe des Layers verändert. Wenn Sie hoch und runter scrollen ändert sich der Style abhängig davon, welche Box aktuell im Viewport sichtbar ist.
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -15,7 +39,6 @@ import DragPan from "ol/interaction/DragPan";
 import { Drawer, Button } from "antd";
 
 import OpenLayersParser from "geostyler-openlayers-parser";
-import GeoJSONParser from "geostyler-geojson-parser";
 
 import isElementInViewport from "./viewportHelper";
 
@@ -50,13 +73,11 @@ const map = new OlMap({
 });
 
 const olParser = new OpenLayersParser();
-const geojsonParser = new GeoJSONParser();
 
 function App() {
   let [styles, setStyles] = useState([]);
   let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
-  let [data, setData] = useState();
 
   useEffect(() => {
     // on page init parse default style once
@@ -72,16 +93,6 @@ function App() {
       })
       .catch(error => console.log(error));
   }, []);
-
-  useEffect(() => {
-    // parse data as soon as it changes
-    geojsonParser
-      .readData(covidDeath)
-      .then(gsData => {
-        setData(gsData);
-      })
-      .catch(error => console.log(error));
-  }, [data]);
 
   useEffect(() => {
     // update the map layer when either visibleBox or styles changes
@@ -151,7 +162,6 @@ function App() {
         <GsStyle
           style={styles[visibleBox]}
           compact={true}
-          data={data}
           onStyleChange={newStyle => {
             olParser
               .writeStyle(newStyle)
@@ -186,3 +196,6 @@ function App() {
 
 export default App;
 ```
+
+Im letzten Unterkapitel werden wir einen weiteren Parser (Daten Parser) hinzufügen, welcher es erlaubt, 
+die UI mit Informationen der importierten Daten zu füllen.

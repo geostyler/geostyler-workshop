@@ -1,14 +1,16 @@
-# First steps
+# Erste Schritte
 
-Now that we have set up our development setup and learned the basics about React
-and EcmaScript 6, we will start by creating a simple React based webapplication
-by the use of [create-react-app](https://github.com/facebook/create-react-app),
-that will include a simple react-geo component. This application will be extended
-towards a fully functional mapping application little by little later on.
+Nachdem wir die Grundlagen thematisiert und einen Einblick in npm, ECMAScript 6 und React
+erhalten haben, wird in diesem Kapitel eine react-basierte Webanwendung mit
+[create-react-app](https://github.com/facebook/create-react-app) erstellt.
 
-Content of this chapter:
+Dieses Kapitel ist in folgende Subkapitel unterteilt:
 
-  * [Base React application](./create-react-app.md)
-  * [Development notes](./webpack-hotreload.md)
-  * [Include react-geo dependency](./basispakete.md)
-  * [Include a react-geo component](./erste-komponente.md)
+- [React Applikation erstellen](../first-steps/create-react-app.md)
+- [Entwicklungsserver](../first-steps/webpack-hotreload.md)
+- [Dependencies inkludieren](../first-steps/basispakete.md)
+- [MapComponent einbinden](../first-steps/stepOne.md)
+- [Weitere Dateien](../first-steps/basispakete.md)
+- [Boxen hinzufügen](../first-steps/stepTwo.md)
+- [Layer hinzufügen](../first-steps/stepThree.md)
+- [Drawer und Toggle](../first-steps/stepFour.md)

@@ -1,10 +1,21 @@
-# Summary
+# Daten Parser
+In diesem Unterkapitel wird der `GeoJSONParser`, welchen wir mit dem Befehl
 
-Glückwunsch! Sie haben den Geostyler Workshop beendet!
+```javascript
+import GeoJSONParser from "geostyler-geojson-parser";
+```
 
-In diesem Workshop haben Sie gelernt wie Sie Ihre erste react-basierte Webanwendung mit Geostyler Funktionalitäten errichten. Durch das Hinzufügen der react-geo Komponente `MapComponent`, sowie der Einbindung von Geostyler inklusive deren Parser haben Sie (einige) Möglichkeiten des Geostylers kennengelernt, um damit Geodaten webbasiert nach Ihren Bedürfnissen graphisch ansprechend darzustellen.
+der Anwendung zugänglich machen, eingebunden. Dieser Datenparser wird verwendet, um die UI mit 
+Informationen aus den importierten Daten zu füllen. Der Parser ermöglicht, dass sich Änderungen
+im Layer auf den Stil und Änderungen im Stil auf den Layer auswirken.
 
-Und hier ist der vollständige Source-Code.
+***Aufgabe 1.***
+Klicken Sie im `GeoStyler` auf *Classification* und folglich auf *Attribute*. Schauen Sie sich analog
+dazu die `covid-death.json` Datei an. Was fällt Ihnen auf?
+
+[![](../images/stepEightImage.png)](../images/stepEightImage.png)
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
