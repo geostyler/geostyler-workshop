@@ -2,6 +2,7 @@
   "name": "geostyler-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@terrestris/react-geo": "^13.0.3",
     "@testing-library/jest-dom": "^4.2.4",
