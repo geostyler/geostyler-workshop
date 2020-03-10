@@ -1,0 +1,603 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MapComponent einbinden | GeoStyler - Workshop</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.9">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-advanced-emoji/emoji-website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../first-steps/stepTwo.html" />
+    
+    
+    <link rel="prev" href="../first-steps/weitereDateien.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.5"
+        data-chapter-title="MapComponent einbinden"
+        data-filepath="first-steps/stepOne.md"
+        data-basepath=".."
+        data-revision="Tue Mar 10 2020 08:50:09 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einführung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="introduction/index.html">
+            
+                
+                    <a href="../introduction/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Grundlagen
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="introduction/npm.html">
+            
+                
+                    <a href="../introduction/npm.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        npm
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction/es6.html">
+            
+                
+                    <a href="../introduction/es6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        ES6
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="introduction/react.html">
+            
+                
+                    <a href="../introduction/react.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        React
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="first-steps/index.html">
+            
+                
+                    <a href="../first-steps/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Erste Schritte
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="first-steps/create-react-app.html">
+            
+                
+                    <a href="../first-steps/create-react-app.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        React Applikation erstellen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="first-steps/webpack-hotreload.html">
+            
+                
+                    <a href="../first-steps/webpack-hotreload.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Entwicklungsserver
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="first-steps/basispakete.html">
+            
+                
+                    <a href="../first-steps/basispakete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Dependencies inkludieren
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="first-steps/weitereDateien.html">
+            
+                
+                    <a href="../first-steps/weitereDateien.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Weitere Dateien
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="first-steps/stepOne.html">
+            
+                
+                    <a href="../first-steps/stepOne.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        MapComponent einbinden
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="first-steps/stepTwo.html">
+            
+                
+                    <a href="../first-steps/stepTwo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        Boxen hinzufügen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="first-steps/stepThree.html">
+            
+                
+                    <a href="../first-steps/stepThree.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        Layer hinzufügen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="first-steps/stepFour.html">
+            
+                
+                    <a href="../first-steps/stepFour.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Drawer und Toggle
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="geostyler/index.html">
+            
+                
+                    <a href="../geostyler/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        GeoStyler
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="geostyler/stepFive.html">
+            
+                
+                    <a href="../geostyler/stepFive.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Wichtige Imports
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="geostyler/stepSix.html">
+            
+                
+                    <a href="../geostyler/stepSix.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Default Style
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="geostyler/stepSeven.html">
+            
+                
+                    <a href="../geostyler/stepSeven.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Layer - Geostyler Verknüpfung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="geostyler/stepEight.html">
+            
+                
+                    <a href="../geostyler/stepEight.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Daten Parser
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="summary/summary.html">
+            
+                
+                    <a href="../summary/summary.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Zusammenfassung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="imprint/imprint.html">
+            
+                
+                    <a href="../imprint/imprint.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Imprint
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >GeoStyler - Workshop</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="mapcomponent-einbinden">MapComponent einbinden</h1>
+<p>Nachdem wir die f&#xFC;r diesen Workshop notwendigen Dependencies installiert haben, k&#xF6;nnen wir deren Komponenten in der
+<em>geostyler-app</em> Anwendung nutzen. Als n&#xE4;chstes werden wir react-geos
+<a href="https://terrestris.github.io/react-geo/docs/latest/index.html#mapcomponent" target="_blank">Map Komponente</a>
+mit der Hintergrundkarte der Anwendung hinzuf&#xFC;gen.
+<br></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p>
+Falls Sie mehr &#xFC;ber react-geo herausfinden m&#xF6;chten, dann k&#xF6;nnen Sie <a href="https://terrestris.github.io/react-geo-ws/" target="_blank">hier</a>
+an dem react-geo-Workshop teilnehmen.</p>
+</blockquote>
+<p>Bevor React, sowie OpenLayers und react-geo verwendet werden k&#xF6;nnen, m&#xFC;ssen diese zu Beginn der Anwendung aus der jeweiligen Bibliothek importiert werden.
+Dies geschieht beispielsweise durch:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> OlMap <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;ol/Map&quot;</span>;
+<span class="hljs-keyword">import</span> { MapComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@terrestris/react-geo&quot;</span>;
+
+<span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> OlMap({
+  view: <span class="hljs-keyword">new</span> OlView({
+    center: center,
+    zoom: <span class="hljs-number">2</span>,
+    projection: <span class="hljs-string">&quot;EPSG:3857&quot;</span>
+  }),
+  layers: [base],
+  interactions: [<span class="hljs-keyword">new</span> DragPan()]
+});
+</code></pre>
+<p>Dar&#xFC;ber hinaus muss hier eine <code>map</code> Variable erstellt werden, welche grundlegende Einstellungen der Karteninstanz beinhaltet, wie z.B. das Zoomlevel, die Projektion oder auch die Layer.</p>
+<p>Die react-geo Komponente (<code>MapComponent</code>) dient als Wrapper f&#xFC;r eine OpenLayers map. Die
+<code>OlMap</code> Variable <code>map</code> wird der <code>MapComponent</code> als eine Property
+(prop) hinzugef&#xFC;gt.</p>
+<pre><code class="lang-javascript">&lt;MapComponent map={map} /&gt;
+</code></pre>
+<p>Die Hintergrundkarte (im Code mit der Variable <code>base</code> genannt) ist ein OpenLayers Layer und wird durch den Befehl
+<code>import { getBaseLayer} from &apos;./helper&apos;;</code> der App.js Datei zug&#xE4;nglich gemacht.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p>
+Der &#xDC;bersicht halber wurde diese Datei von <code>App.js</code> nach <code>helper.js</code> ausgelagert.</p>
+</blockquote>
+<p><strong><em>Aufgabe 1.</em></strong>
+&#xD6;ffnen Sie einen Texteditor Ihrer Wahl (falls noch nicht geschehen) und &#xF6;ffnen Sie die Datei <code>App.js</code>
+von dem <code>src</code> Ordner Ihrer <em>geostyler-app</em> Anwendung. Erstellen Sie nun eine <code>map</code>- Variable und f&#xFC;gen Sie diese mit dem <code>base</code>- Layer der Applikation hinzu.</p>
+<p>Folgenderma&#xDF;en wird die Karte bei erfolgreicher Bearbeitung der Aufgabe (und Speichern der &#xC4;nderungen) im Browser angezeigt:</p>
+<p><a href="../images/stepOneImage.png"><img src="../images/stepOneImage.png" alt></a></p>
+<p>Der Code Ihrer L&#xF6;sung k&#xF6;nnte wie folgt aussehen:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
+
+<span class="hljs-keyword">import</span> OlMap <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;ol/Map&quot;</span>;
+<span class="hljs-keyword">import</span> OlView <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;ol/View&quot;</span>;
+<span class="hljs-keyword">import</span> DragPan <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;ol/interaction/DragPan&quot;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;./App.css&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;ol/ol.css&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;antd/dist/antd.css&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;./Workshop.css&quot;</span>;
+<span class="hljs-keyword">import</span> { getBaseLayer } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./helper&quot;</span>;
+
+<span class="hljs-keyword">import</span> { MapComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@terrestris/react-geo&quot;</span>;
+
+<span class="hljs-keyword">var</span> base = getBaseLayer();
+
+<span class="hljs-keyword">const</span> center = [<span class="hljs-number">0</span>, <span class="hljs-number">8000000</span>];
+
+<span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> OlMap({
+  view: <span class="hljs-keyword">new</span> OlView({
+    center: center,
+    zoom: <span class="hljs-number">2</span>,
+    projection: <span class="hljs-string">&quot;EPSG:3857&quot;</span>
+  }),
+  layers: [base],
+  interactions: [<span class="hljs-keyword">new</span> DragPan()]
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">&apos;App&apos;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">MapComponent</span> <span class="hljs-attribute">map</span>=<span class="hljs-value">{map}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  )</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;
+</code></pre>
+<p>Im n&#xE4;chsten Unterkapitel werden wir der Anwendung drei Boxen hinzuf&#xFC;gen, welche den Style des 
+Layers (s. Kapitel 2.7), abh&#xE4;ngig von der aktuell im Viewport zu sehenden Box ver&#xE4;ndert.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../first-steps/weitereDateien.html" class="navigation navigation-prev " aria-label="Previous page: Weitere Dateien"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../first-steps/stepTwo.html" class="navigation navigation-next " aria-label="Next page: Boxen hinzufügen"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
