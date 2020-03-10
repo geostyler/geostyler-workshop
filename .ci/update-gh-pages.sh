@@ -44,10 +44,10 @@ cd $GH_PAGES_DIR
 SRC_DIR=$TRAVIS_BUILD_DIR/gitbook/build
 
 # Cleanup existing resources.
-rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json first-steps/ gitbook/ higher-order-components/ images/ introduction/ map-integration/ materials/ screenshots/
+rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json first-steps/ geostyler/ gitbook/ images/ imprint/ introduction/ summary/
 
 # Copy the src dir from previous build folder.
-cp -r $SRC_DIR/geostyler-workshop/* .
+cp -r $SRC_DIR/geostyler-ws/* .
 
 cp $SRC_DIR/*.pdf .
 cp $SRC_DIR/*.epub .
