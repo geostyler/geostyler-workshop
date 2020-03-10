@@ -1,4 +1,4 @@
-# GeoStyler
+# GeoStyler einbinden
 
 Im folgenden Überkapitel werden Sie endlich GeoStyler der Anwendung hinzufügen.
 

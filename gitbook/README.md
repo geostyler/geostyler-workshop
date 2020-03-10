@@ -6,7 +6,7 @@ Herzlich Willkommen beim **{{ book.workshopName }}**. Dieser Workshop soll Ihnen
 Überblick über den GeoStyler als ein webbasiertes Werkzeug zur interaktiven Erstellung von kartographischen Style-Vorschriften für Geodaten geben.
 
 Grundsätzlich werden wir in diesem Workshop eine einfache Anwendung schreiben, mit der Sie eine 
-Story Map über CoVid-19 erstellen können. Die fertige Anwendung, wie Sie sie in diesem Workshop "bauen" werden, kann [hier]() eingesehen werden.
+Story Map über CoVid-19 erstellen können. Die fertige Anwendung, wie Sie sie in diesem Workshop "bauen" werden, kann [hier](https://geostyler.github.io/geostyler-workshop/app) eingesehen werden.
 <br>
 
 > **info**
@@ -40,7 +40,7 @@ Die folgenden Module werden in diesem Workshop behandelt:
 
 - [Grundlagen](./introduction/README.md) - Tauchen Sie in die Grundlagen von EcmaScript 6, React und npm ein.
 - [Erste Schritte](first-steps/index.md) - Lernen Sie, wie Sie Ihre eigene React-App erstellen und wie Sie react-geo darin einbinden können.
-- [Geostyler](geostyler/index.md) - Erweitern Sie ihre Anwendung mit GeoStyler.
+- [GeoStyler einbinden](geostyler/index.md) - Erweitern Sie ihre Anwendung mit GeoStyler.
 
 ## Autoren
 

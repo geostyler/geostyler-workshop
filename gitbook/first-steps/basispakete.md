@@ -1,4 +1,5 @@
-# GeoStyler dependency inkludieren
+# Dependencies hinzufügen
+### GeoStyler dependency hinzufügen
 
 Um die `GeoStyler` dependency hinzuzufügen, navigieren Sie bitte (falls noch nicht geschehen) zum Ordner
 Ihres Projektes und führen Sie dort folgenden Befehl aus
@@ -14,7 +15,7 @@ npm install geostyler
 Dies fügt die neuste Version von `GeoStyler` zu Ihrer lokalen `package.json` Datei hinzu und lädt 
 die Bibliothek in das Verzeichnis `node_modules`.
 
-## react-geo dependency hinzufügen
+### react-geo dependency hinzufügen
 
 Analog gilt dies für die `react-geo` dependency:
 
@@ -22,7 +23,7 @@ Analog gilt dies für die `react-geo` dependency:
 npm i @terrestris/react-geo
 ```
 
-## Ant Design und OpenLayers dependencies hinzufügen
+### Ant Design und OpenLayers dependencies hinzufügen
 
 Sie haben vielleicht bemerkt, dass der Schritt von oben einige Warnungen hervorgerufen hat, die `GeoStyler` einschließen:
 

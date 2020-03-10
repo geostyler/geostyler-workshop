@@ -21,10 +21,12 @@ wenn sich entweder eine andere Box im Viewport befindet, oder der Style geänder
 ```
 
 ***Aufgabe 1.***
-Ändern Sie den nun den Stil und Scrollen Sie hoch und runter (soweit, bis eine andere Box im Viewport sichtbar wird). Welche Veränderung wird sichtbar?
+Fügen sie die oben dargestellte Funktion der Anwendung hinzu.
+
+***Aufgabe 2.***
+Ändern Sie nun den Stil und Scrollen Sie hoch und runter (soweit, bis eine andere Box im Viewport sichtbar wird). Welche Veränderung wird sichtbar?
 
 [![](../images/stepSevenImage.png)](../images/stepSevenImage.png)
-<br>
 <br>
 Wie Sie anhand der Abbildung erkennen können, wurde die Farbe des Layers verändert. Wenn Sie hoch und runter scrollen ändert sich der Style abhängig davon, welche Box aktuell im Viewport sichtbar ist.
 

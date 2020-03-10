@@ -6,7 +6,7 @@
   "variables": {
     "workshopName": "GeoStyler - Workshop",
     "workshopRawSourceBaseUrl": "https://rawgit.com/geostyler/geostyler-workshop/master/src/",
-    "workshopDownloadUrl": "https://geostyler.github.io/geostyler-workshop/geostyler-workshop.zip",
+    "workshopDownloadUrl": "https://geostyler.github.io/geostyler-workshop/gitbook/geostyler-ws.zip",
     "geoStylerVersion": "12.1.0",
     "reactAppName": "geostyler-app",
     "authors": [{

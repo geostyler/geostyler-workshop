@@ -1,4 +1,4 @@
-# Daten Parser
+# Daten Parser verwenden
 In diesem Unterkapitel wird der `GeoJSONParser`, welchen wir mit dem Befehl
 
 ```javascript
@@ -10,7 +10,26 @@ Informationen aus den importierten Daten zu füllen. Der Parser ermöglicht, das
 im Layer auf den Stil und Änderungen im Stil auf den Layer auswirken.
 
 ***Aufgabe 1.***
-Klicken Sie im `GeoStyler` auf *Classification* und folglich auf *Attribute*. Schauen Sie sich analog
+Importieren Sie den GeoJSONParser (analog zu dem bereits importierten OpenLayersParser) und 
+erstellen Sie eine neue GeoJSONParser Instanz mit dem Namen `geojsonParser`.
+
+***Aufgabe 2.***
+Erstellen Sie eine weitere `useEffect()` - Funktion mit dem `geojsonParser` und lassen Sie diesen den `covidDeath` - Layer lesen (`.readData()`). 
+
+***Aufgabe 3.***
+Fügen Sie anschließend folgenden Code Block unterhalb der `.readData()` - Methode ein:
+```javascript
+      .then(gsData => {
+        setData(gsData);
+      })
+      .catch(error => console.log(error));
+  }, [data]);
+```
+Dieser Code Block sorgt dafür, dass die Daten des Layers, durch den Daten Parser in der UI angezeigt 
+werden.
+
+***Aufgabe 4.***
+Klicken Sie nun im `GeoStyler` auf *Classification* und folglich auf *Attribute*. Schauen Sie sich analog
 dazu die `covid-death.json` Datei an. Was fällt Ihnen auf?
 
 [![](../images/stepEightImage.png)](../images/stepEightImage.png)
