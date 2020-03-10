@@ -42,16 +42,27 @@ cd $GH_PAGES_DIR
 
 # The src directory containing the build artifacts.
 SRC_DIR=$TRAVIS_BUILD_DIR/gitbook/build
+APP_DIR=$TRAVIS_BUILD_DIR/geostyler-app/build
+INDEX_DIR=$TRAVIS_BUILD_DIR/public
 
 # Cleanup existing resources.
-rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json first-steps/ geostyler/ gitbook/ images/ imprint/ introduction/ summary/
+rm -Rf gitbook/ app/ *.html
+
+# copy index.html
+cp $INDEX_DIR/index.html .
+
+mkdir -p gitbook/
 
 # Copy the src dir from previous build folder.
-cp -r $SRC_DIR/geostyler-ws/* .
+cp -r $SRC_DIR/geostyler-ws/* gitbook/
 
-cp $SRC_DIR/*.pdf .
-cp $SRC_DIR/*.epub .
-cp $SRC_DIR/*.zip .
+cp $SRC_DIR/*.pdf gitbook/
+cp $SRC_DIR/*.epub gitbook/
+cp $SRC_DIR/*.zip gitbook/
+
+# copy the app build from previous build folder.
+mkdir -p app/
+cp -r $APP_DIR/* app/
 
 git add --all
 git commit -m "$GH_PAGES_COMMIT_MSG"

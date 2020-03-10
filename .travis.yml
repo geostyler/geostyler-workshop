@@ -16,6 +16,12 @@ script:
   - npm i
   - npm run archive
   - cd ../
+  - nvm install 12
+  - nvm use 12
+  - cd geostyler-app/
+  - npm i
+  - npm run build
+  - cd ../
 after_success:
   - ./.ci/update-gh-pages.sh > /dev/null 2>&1
 notifications:
