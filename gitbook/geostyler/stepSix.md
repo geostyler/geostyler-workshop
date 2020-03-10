@@ -1,11 +1,16 @@
 # OpenLayers Parser
 
 In diesem Unterkapitel kommt erstmals ein Parser zum Einsatz. Dieser wird direkt
-von der Geostyler Bibliothek importiert und in der Variable `olParser` referenziert (s. folgener Code-Block). Der Parser wird verwendet, um von bereits existierenden Style-Vorschriften zu Geostyler-Style zu transformieren
+von der GeoStyler Bibliothek importiert und in der Variable `olParser` referenziert (s. folgender Code-Block). Der Parser wird verwendet, um von bereits existierenden Style-Vorschriften zu GeoStyler-Style zu transformieren.
 
 ```javascript
 import OpenLayersParser from "geostyler-openlayers-parser";
 const olParser = new OpenLayersParser();
+
+OlParser
+  .readStyle(defaultOlStyle)
+  .then(gsStyle => console.log(gsStyle))
+  .catch(error => console.log(error));
 ```
 
 Desweiteren wird ein _defaultOlStyle_ definiert (ebenfalls aus der `helper.js` Datei importiert).
@@ -14,16 +19,18 @@ Desweiteren wird ein _defaultOlStyle_ definiert (ebenfalls aus der `helper.js` D
 import { getDefaultStyle } from "./helper";
 const defaultOlStyle = getDefaultStyle();
 ```
-Der `OpenLayersParser` ermöglicht hierbei, dass die Style-Vorschriften in den Geostyler-Style überführt werden.
-<br><br>
-Darüber hinaus beinhaltet die Anwendung nun ein `setStyle()` - handling. Dies sorgt dafür, dass der 
-`defaultOlStyle` durch einen neuen Style ersetzt werden kann.  
 
-***Aufgabe 1.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
+Der `OpenLayersParser` ermöglicht hierbei, dass die Style-Vorschriften in den GeoStyler-Style überführt 
+werden. Das `defaultOlStyle` kann somit geparst werden.
+
+Der `GeoStyler` nimmt nun einen Stil an, jedoch verändert sich dieser beim Scrollen noch nicht. Diese 
+Verknüpfung mit den Daten erfolgt erst im kommenden Kapitel.
+
+Die Applikation sollte nun wie folgt aussehen:
 
 [![](../images/stepSixImage.png)](../images/stepSixImage.png)
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -172,3 +179,6 @@ function App() {
 
 export default App;
 ```
+
+Wie sich der Layer abhängig von der aktuell im Viewport zu sehenden Box verändert, werden wir
+im nächsten Kapitel sehen. 

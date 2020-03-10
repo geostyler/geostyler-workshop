@@ -5,13 +5,17 @@ In diesem Unterkapitel wird der `GeoJSONParser`, welchen wir mit dem Befehl
 import GeoJSONParser from "geostyler-geojson-parser";
 ```
 
-der Anwendung zugänglich machen, eingebunden. Dieser Datenparser wird verwendet, um die UI mit Informationen aus den importierten Daten zu füllen.
+der Anwendung zugänglich machen, eingebunden. Dieser Datenparser wird verwendet, um die UI mit 
+Informationen aus den importierten Daten zu füllen. Der Parser ermöglicht, dass sich Änderungen
+im Layer auf den Stil und Änderungen im Stil auf den Layer auswirken.
 
 ***Aufgabe 1.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
+Klicken Sie im `GeoStyler` auf *Classification* und folglich auf *Attribute*. Schauen Sie sich analog
+dazu die `covid-death.json` Datei an. Was fällt Ihnen auf?
 
 [![](../images/stepEightImage.png)](../images/stepEightImage.png)
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";

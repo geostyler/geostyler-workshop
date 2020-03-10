@@ -62,3 +62,5 @@ class App extends React.Component {
 
 export default App;
 ```
+
+In diesem Workshop werden wir [Functions](https://reactjs.org/docs/components-and-props.html) verwenden.

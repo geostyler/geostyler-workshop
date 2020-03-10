@@ -153,3 +153,6 @@ function App() {
 
 export default App;
 ```
+
+Das nächste Überkapitel beschäftigt sich mit dem GeoStyler und geht dabei auf die grundlegende 
+Verwendung der UI, des Daten Parsers und des Style Parsers ein.

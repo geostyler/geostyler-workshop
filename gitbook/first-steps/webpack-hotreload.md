@@ -1,11 +1,11 @@
 # Entwicklungsserver
 
-`create-react-app` enthält/inkludiert einen [webpack](https://github.com/webpack/webpack) Entwicklungsserver.
-Dieser Server ermöglicht Ihnen das 'Hot Deployment' Ihres bearbeiteten Codes. Das bedeutet,
+`create-react-app` inkludiert einen [webpack](https://github.com/webpack/webpack) Entwicklungsserver.
+Dieser Server ermöglicht Ihnen das 'Hot Deployment' Ihres bearbeiteten Codes. Dies bedeutet,
 dass Ihre Code-Änderungen sofort im Browser sichtbar sind.
 
 ***Aufgabe 1.***
-Bearbeiten Sie `src/App.js` (beipielsweise wie im Code unten), um das Beispiel zu verändern and let the magic happen!
+Bearbeiten Sie `src/App.js` (beipielsweise wie im Code unten), um die Anwendung zu verändern.
 
 [![](../images/halloWelt.png)](../images/halloWelt.png)
 
@@ -37,3 +37,7 @@ function App() {
 
 export default App;
 ```
+
+Wie wir den GeoStyler und weitere notwendige Pakete für diese 
+Anwendung installieren, werden wir uns im Folgenden genauer 
+anschauen.

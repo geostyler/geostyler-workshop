@@ -1,12 +1,6 @@
 # Wichtige Imports
 
-In diesem Unterkapitel wird der Geostyler der Anwendung zugänglich gemacht. 
-Bevor sie Geostyler verwenden können, muss dieser zunächst durch den Befehl
-
-```javascript
-npm install geostyler
-```
-installiert werden.
+In diesem Unterkapitel wird der GeoSstyler der Anwendung zugänglich gemacht. 
 
 Die anschließende Einbindung in die Anwendung erfolgt durch den Import:
 
@@ -33,18 +27,19 @@ Klick auf den Button wird somit der Drawer und der Geostyler sichtbar.
 </Drawer>
 ```
 
+Durch die Einbindung des GeoStylers ist im Grund alles für die Inbetriebnahme gegeben, 
+jedoch fehlt hierbei noch die Verknüpfung mit der Applikation und den Daten.
+Der Anwendung bedarf es nun den notwendigen Parsern, um SLD bspw. in OpenLayers 
+Styles zu überführen. Darauf wird in den folgenden Kapiteln eingegangen.
+
 ***Aufgabe 1.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen, speichern und auf den Button klicken, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
+Importieren Sie den `GeoStyler` und fügen diese in den Drawer ein.
+
+Die Applikation sollte nun wie folgt aussehen:
 
 [![](../images/stepFiveImage.png)](../images/stepFiveImage.png)
 
-
-Auffällig ist hierbei, dass...
-<br>
-Weiteres kann aktuell noch nicht gemacht werden. Der Anwendung bedarf es nun den notwendigen Parsern, um
-SLD bspw. in OpenLayers Styles zu überführen. Dies wird in den folgenden Kapiteln umgesetzt.
-<br>
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -161,3 +156,6 @@ function App() {
 
 export default App;
 ```
+
+Im nächsten Unterkapitel werden wir einen `default Style` einbinden und einen Parser aus 
+der `GeoStyler` Bibliothek importieren.

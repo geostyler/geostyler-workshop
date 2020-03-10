@@ -19,7 +19,7 @@ Diese Funktion erkennt die sich aktuell im Viewport befindende sichtbare Box.
 
 > **info**
 > Für diesen Workshop reicht es zu wissen, dass es diese Funktion gibt. Eine genaue Erläuterung des sich
-> in der `vieportHelper.js` Datei befindenden Codes ist für diesen Workshop somit nicht relevant.
+> in der `viewportHelper.js` Datei befindenden Codes ist für diesen Workshop somit nicht relevant.
 
 ***Aufgabe 1.***
 Ersetzen Sie nun den gesamten Code ihrer `App.js` Datei mit dem Code im unteren Bereich dieser Seite.
@@ -116,4 +116,4 @@ function App() {
 export default App;
 ```
 
-Im nächsten Unterkapitel werden wir einen Layer der Karte hinzufügen.
+Im nächsten Unterkapitel werden wir der Karte einen Layer hinzufügen.

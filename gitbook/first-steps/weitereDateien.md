@@ -200,3 +200,7 @@ html, body, #root, .App, #map {
 }
 
 ```
+
+Wenn alle Dateien erstellt wurden, dann können wir endlich 
+mit der Erstellung der Webmap beginnen. Dies schauen wir uns
+im nächsten Unterkapitel an.

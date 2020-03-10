@@ -2,8 +2,6 @@
 
 In diesem Unterkapitel wird der Geostyler mit dem Layer verküpft.
 
-???
-
 Darüber hinaus wird durch folgende Funktion die Karte jedes mal geupdated, 
 wenn sich entweder eine andere Box im Viewport befindet, oder der Style geändert wird.
 
@@ -23,10 +21,14 @@ wenn sich entweder eine andere Box im Viewport befindet, oder der Style geänder
 ```
 
 ***Aufgabe 1.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
+Ändern Sie den nun den Stil und Scrollen Sie hoch und runter (soweit, bis eine andere Box im Viewport sichtbar wird). Welche Veränderung wird sichtbar?
 
 [![](../images/stepSevenImage.png)](../images/stepSevenImage.png)
+<br>
+<br>
+Wie Sie anhand der Abbildung erkennen können, wurde die Farbe des Layers verändert. Wenn Sie hoch und runter scrollen ändert sich der Style abhängig davon, welche Box aktuell im Viewport sichtbar ist.
+
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -194,3 +196,6 @@ function App() {
 
 export default App;
 ```
+
+Im letzten Unterkapitel werden wir einen weiteren Parser (Daten Parser) hinzufügen, welcher es erlaubt, 
+die UI mit Informationen der importierten Daten zu füllen.

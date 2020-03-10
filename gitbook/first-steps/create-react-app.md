@@ -1,9 +1,9 @@
 # React Applikation erstellen
 
 Natürlich könnten wir diesen Workshop damit beginnen, dass wir eine auf
-react basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen
+React basierende Webanwendung von Hand erstellen, aber wie Sie sich vorstellen
 können, wäre dies eine schwierige Aufgabe für den Anfang. Wir wollen also direkt
-in react-geo eintauchen, ohne die Notwendigkeit, alle Entwicklungswerkzeuge
+in React eintauchen, ohne die Notwendigkeit, alle Entwicklungswerkzeuge
 zusammenzuhalten, um eine Webanwendung zum Laufen zu bringen. Glücklicherweise
 gibt es ein Befehl, mit dem wir eine Anwendung für uns generieren können
 (auch ohne jegliche Konfiguration!): [create-react-app](https://github.com/facebook/create-react-app).
@@ -19,14 +19,16 @@ folgendem Befehl in den Ordner des Projektes navigiert werden:
 
 <pre><xmp>cd {{ book.reactAppName }}</xmp></pre>
 
-Nun kann endlich der Entwicklungsserver gestartet. Hierfür muss folgender Befehl in das Terminal eingegeben werden:
+Nun kann endlich der Entwicklungsserver gestartet werden. Hierfür muss folgender Befehl in das Terminal eingegeben werden:
 
 ```
 npm start
 ```
 
 ***Aufgabe 1.***
-Navigieren Sie in den Ordner des Projekts und führen Sie den Befehl `npm start` aus.
+Erstellen Sie eine React Anwendung mit <pre><xmp>npx create-react-app {{ book.reactAppName }}</xmp></pre> 
+***Aufgabe 2.***
+Navigieren Sie mit Ihrem Terminal in den Ordner und führen Sie dort den Befehl `npm start` aus.
 
 > **info**
 > Dies wird nur funktionieren, wenn Sie node (Version 6), sowie npm und nvm erfolgreich auf ihrer lokalen Maschine installiert haben.
@@ -35,3 +37,6 @@ Navigieren Sie in den Ordner des Projekts und führen Sie den Befehl `npm start`
 Um die Anwendung in Ihrem Browser anzuzeigen, öffnen Sie bitte [http://localhost:3000/](http://localhost:3000/). Ihr Screen sollte nun wie folgt aus:
 
 [![](../images/cra-startpage.png)](../images/cra-startpage.png)
+
+Im Folgenden Unterkapitel werden wir uns kurz
+den Entwicklungsserver anschauen.

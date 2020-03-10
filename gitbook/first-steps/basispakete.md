@@ -1,27 +1,33 @@
-# react-geo dependency inkludieren
+# GeoStyler dependency inkludieren
 
-`react-geo` ist unter [https://www.npmjs.com/package/@terrestris/react-geo](https://www.npmjs.com/package/@terrestris/react-geo) veröffentlicht und 
-kann in Ihre *react* Anwendung über grundlegende `npm` Befehle integriert und installiert werden.
+Um die `GeoStyler` dependency hinzuzufügen, navigieren Sie bitte (falls noch nicht geschehen) zum Ordner
+Ihres Projektes und führen Sie dort folgenden Befehl aus
+
+```javascript
+npm install geostyler
+```
+
+> **info**
+> Für die Eingabe dieses Befehls müssen Sie ein neues Terminal öffnen und erneut zu Ihrem Ordner 
+> navigieren.
+
+Dies fügt die neuste Version von `GeoStyler` zu Ihrer lokalen `package.json` Datei hinzu und lädt 
+die Bibliothek in das Verzeichnis `node_modules`.
 
 ## react-geo dependency hinzufügen
 
-Um die `react-geo` dependency hinzuzufügen, navigieren Sie bitte (falls noch nicht geschehen) zum Ordner
-Ihres Projkets und führen Sie folgenden Befehl aus:
+Analog gilt dies für die `react-geo` dependency:
 
 ```
 npm i @terrestris/react-geo
 ```
 
-Dies fügt die neuste Version von `react-geo` zu Ihrer lokalen `package.json` Datei hinzu und lädt 
-die Bibliothek in das Verzeichnis `node_modules`.
-
 ## Ant Design und OpenLayers dependencies hinzufügen
 
-Sie haben vielleicht bemerkt, dass der Schritt von oben einige Warnungen hervorgerufen hat, die `react-geo` einschließen:
+Sie haben vielleicht bemerkt, dass der Schritt von oben einige Warnungen hervorgerufen hat, die `GeoStyler` einschließen:
 
-<pre><xmp>npm WARN @terrestris/react-geo@{{ book.reactGeoVersion }} requires a peer of antd@~3.0 but none is installed. You must install peer dependencies yourself.
-npm WARN @terrestris/react-geo@{{ book.reactGeoVersion }} requires a peer of ol@~5.0 but none is installed. You must install peer dependencies yourself.
-</xmp></pre>
+<pre><xmp>npm WARN geostyler@4.5.0 requires a peer of antd@3.x but none is installed. You must install peer dependencies yourself.
+npm WARN geostyler@4.5.0 requires a peer of ol@5.x but none is installed. You must install peer dependencies yourself.</xmp></pre>
 
 `npm` hat drei verschiedene Arten von dependencies:
 
@@ -48,8 +54,12 @@ Da `npm` Abhängigkeiten hierarchisch behandelt, würde die doppelte Einbeziehun
 Um diese Anforderungen zu erfüllen, müssen wir die gewünschten *peer dependencies* mit folgendem Befehl installieren:
 
 ```
-npm i antd ol
+npm i antd@3.x ol@6
 ```
 
 Jetzt sind wir bereit, alle `react-geo` Komponenten innerhalb
 unserer *{{ book.reactAppName }}* Anwendung zu verwenden.
+
+Neben der grundlegenden React Anwendung werden wir im
+Folgenden Unterkapitel weitere Dateien für die CoVid-19 Map 
+erstellen.

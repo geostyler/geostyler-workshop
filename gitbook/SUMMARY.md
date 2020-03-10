@@ -14,7 +14,7 @@
   - [Boxen hinzufügen](first-steps/stepTwo.md)
   - [Layer hinzufügen](first-steps/stepThree.md)
   - [Drawer und Toggle](first-steps/stepFour.md)
-- [Geostyler](geostyler/index.md)
+- [GeoStyler](geostyler/index.md)
   - [Wichtige Imports](geostyler/stepFive.md)
   - [Default Style](geostyler/stepSix.md)
   - [Layer - Geostyler Verknüpfung](geostyler/stepSeven.md)

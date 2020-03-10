@@ -33,15 +33,19 @@ const map = new OlMap({
 
 **Aufgabe 1.**
 Erstellen Sie nun einen neuen Ordner mit dem Namen `data` innerhalb des `src`-Ordners.
-Fügen Sie anschließend die `covid-death.json` Datei in den `data` Ordner ein.
 
-***Aufgabe 2.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendunge wie folgt im Browser dargestellt werden:
+**Aufgabe 2.**
+Speichern Sie den Inhalt dieser JSON-Datei ([hier](https://raw.githubusercontent.com/geostyler/geostyler-workshop/master/geostyler-app/src/data/covid-death.json)) und fügen Sie diesen anschließend in eine Datei mit dem Namen `covid-death.json` in den `data` Ordner ein.
 
+***Aufgabe 3.***
+Importieren Sie nun das GeoJSON in die `App.js` Datei und erstellen Sie daraus einen OL-Layer mit dem Namen `vector`, mit Hilfe der Funktion `getCovidLayer`.
+Fügen Sie die `vector` - Variable nun dem `map` - Objekt hinzu.
+
+Die Anwendung sollte anschließend wie folgt aussehen:
 
 [![](../images/stepThreeImage.png)](../images/stepThreeImage.png)
 
+Der Code Ihrer Lösung könnte wie folgt aussehen:
 
 ```javascript
 import React, { useState, useEffect } from "react";
@@ -133,3 +137,6 @@ function App() {
 
 export default App;
 ```
+
+Im folgenden Unterkapitel werden wir der Anwendung einen Drawer und einen Button hinzufügen.
+Innerhalb dieses Drawers werden wir dann folglich den `GeoStyler` einbinden.
