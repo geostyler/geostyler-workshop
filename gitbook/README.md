@@ -1,6 +1,6 @@
 <center><img src="images/geo-styler-logo.jpg" style="width:650px;"/></center>
 
-# Workshop _{{ book.workshopName }}_
+# _{{ book.workshopName }}_
 
 Herzlich Willkommen beim **{{ book.workshopName }}**. Dieser Workshop soll Ihnen einen einführenden
 Überblick über den GeoStyler als ein webbasiertes Werkzeug zur interaktiven Erstellung von kartographischen Style-Vorschriften für Geodaten geben.
