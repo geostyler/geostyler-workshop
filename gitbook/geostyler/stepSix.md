@@ -26,9 +26,6 @@ werden. Das `defaultOlStyle` kann somit geparst werden.
 Der `GeoStyler` nimmt nun einen Stil an, jedoch verändert sich dieser beim Scrollen noch nicht. Diese 
 Verknüpfung mit den Daten erfolgt erst im kommenden Kapitel.
 
-***Aufgabe 1.***
-???
-
 Die Applikation sollte nun wie folgt aussehen:
 
 [![](../images/stepSixImage.png)](../images/stepSixImage.png)
