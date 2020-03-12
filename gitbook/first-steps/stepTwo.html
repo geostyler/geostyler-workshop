@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Boxen hinzufügen | GeoStyler - Workshop</title>
+        <title>Infoboxen hinzufügen | GeoStyler - Workshop</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.9">
@@ -74,10 +74,10 @@
         
     <div class="book"
         data-level="2.6"
-        data-chapter-title="Boxen hinzufügen"
+        data-chapter-title="Infoboxen hinzufügen"
         data-filepath="first-steps/stepTwo.md"
         data-basepath=".."
-        data-revision="Tue Mar 10 2020 10:13:15 GMT+0000 (UTC)"
+        data-revision="Thu Mar 12 2020 08:45:37 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -227,7 +227,7 @@
                         
                             <b>2.3.</b>
                         
-                        Dependencies inkludieren
+                        Dependencies hinzufügen
                     </a>
             
             
@@ -242,7 +242,7 @@
                         
                             <b>2.4.</b>
                         
-                        Weitere Dateien
+                        Hilfsdateien einbinden
                     </a>
             
             
@@ -257,7 +257,7 @@
                         
                             <b>2.5.</b>
                         
-                        MapComponent einbinden
+                        Karte hinzufügen
                     </a>
             
             
@@ -272,7 +272,7 @@
                         
                             <b>2.6.</b>
                         
-                        Boxen hinzufügen
+                        Infoboxen hinzufügen
                     </a>
             
             
@@ -287,7 +287,7 @@
                         
                             <b>2.7.</b>
                         
-                        Layer hinzufügen
+                        CoVid-Layer hinzufügen
                     </a>
             
             
@@ -302,7 +302,7 @@
                         
                             <b>2.8.</b>
                         
-                        Drawer und Toggle
+                        Drawer und Toggle hinzufügen
                     </a>
             
             
@@ -322,7 +322,7 @@
                         
                             <b>3.</b>
                         
-                        GeoStyler
+                        GeoStyler einbinden
                     </a>
             
             
@@ -338,7 +338,7 @@
                         
                             <b>3.1.</b>
                         
-                        Wichtige Imports
+                        UI Komponente hinzufügen
                     </a>
             
             
@@ -353,7 +353,7 @@
                         
                             <b>3.2.</b>
                         
-                        Default Style
+                        Style Parser verwenden
                     </a>
             
             
@@ -383,7 +383,7 @@
                         
                             <b>3.4.</b>
                         
-                        Daten Parser
+                        Daten Parser verwenden
                     </a>
             
             
@@ -457,26 +457,73 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="boxen-hinzuf&#xFC;gen">Boxen hinzuf&#xFC;gen</h1>
+                        <h1 id="infoboxen-hinzuf&#xFC;gen">Infoboxen hinzuf&#xFC;gen</h1>
 <p>In diesem Abschnitt werden wir der Anwendung drei Boxen (div-Elemente, die durch Angabe von
 width &amp; height wie eine Box aussehen) hinzuf&#xFC;gen, welche mit einem <em>scroll
 eventlistener</em> versehen sind. Ziel ist es, den Style des Layers (welcher im folgenden Kapitel hinzugef&#xFC;gt wird) abh&#xE4;ngig von der aktuell im Viewport zu sehenden Box zu ver&#xE4;ndern.</p>
-<p>Die jeweiligen Boxen wurden wie folgt erstellt (hier beispielhaft die erste Box):</p>
+<p>Die jeweiligen Boxen wurden wie folgt erstellt (hier beispielhaft die zweite Box):</p>
 <pre><code class="lang-javascript">&lt;div id=<span class="hljs-string">&apos;ws-overlay-2&apos;</span> className=<span class="hljs-string">&apos;ws-overlay&apos;</span>&gt;
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Overlay {visibleBox + 1}<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Put your info text here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </span></code></pre>
 <p>Der <code>App.js</code> Datei wird durch den Befehl <code>import isElementInViewport from &quot;./viewportHelper&quot;;</code> eine Funktion zug&#xE4;nglich gemacht, welche in der <code>viewportHelper.js</code> Datei definiert ist.</p>
-<p>Diese Funktion erkennt die sich aktuell im Viewport befindende sichtbare Box.</p>
+<p>Diese Funktion erkennt die sich aktuell im Viewport befindende Box.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
 <p>
 F&#xFC;r diesen Workshop reicht es zu wissen, dass es diese Funktion gibt. Eine genaue Erl&#xE4;uterung des sich
 in der <code>viewportHelper.js</code> Datei befindenden Codes ist f&#xFC;r diesen Workshop somit nicht relevant.</p>
 </blockquote>
+<p>Dar&#xFC;ber hinaus werden innerhalb der <code>App</code>- Funktion zwei State Variablen hinzugef&#xFC;gt:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> [visibleBox, setVisibleBox] = useState(<span class="hljs-number">0</span>);
+</code></pre>
+<p>Diese werden im Folgenden ben&#xF6;tigt, um den jeweiligen aktuellen State, ausgehend von der sich
+aktuell im Viewport befindenden Box, zu ver&#xE4;ndern. </p>
 <p><strong><em>Aufgabe 1.</em></strong>
-Ersetzen Sie nun den gesamten Code ihrer <code>App.js</code> Datei mit dem Code im unteren Bereich dieser Seite.
-Ihre Anwendung sollte, insofern Sie die Datein gespeichert haben, nun wie folgt aussehen:</p>
+Erstellen Sie drei Infoboxen und f&#xFC;gen Sie diese in die <code>return</code> - Funktion der <code>App</code> - Funktion ein. 
+Diese sollten jeweils die id <code>&apos;ws-overlay-1&apos;</code> (Zahl abh&#xE4;ngig von der Box) und die Klasse (<code>className</code>)
+<code>ws-overlay</code> beinhalten. Des Weiteren soll sich in der <code>h1</code> folgender Code befinden:
+<code>Overlay {visibleBox + 1}</code></p>
+<p><strong><em>Aufgabe 2.</em></strong>
+F&#xFC;gen Sie zwei State Variablen mit den Namen <code>visibleBox</code> und <code>setVisibleBox</code> der <em>function Component</em> hinzu und weisen Sie diesen den Wert <code>useState(0)</code> zu.</p>
+<p><strong><em>Aufgabe 3.</em></strong>
+F&#xFC;gen Sie folgenden Code Block unterhalb der in Aufgabe 2 erstellten Variablen ein.</p>
+<pre><code class="lang-javascript">  useEffect(() =&gt; {
+    <span class="hljs-comment">// add scroll eventlistener</span>
+    <span class="hljs-comment">// unfortunately, this will be re-run as soon as visible</span>
+    <span class="hljs-comment">// box changes. Otherwise we don&apos;t have visible box in our scope</span>
+    <span class="hljs-keyword">const</span> getVisibleBox = () =&gt; {
+      <span class="hljs-keyword">const</span> boxes = [
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;ws-overlay-1&quot;</span>),
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;ws-overlay-2&quot;</span>),
+        <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;ws-overlay-3&quot;</span>)
+      ];
+      <span class="hljs-keyword">const</span> boxIdx = boxes.findIndex(box =&gt; isElementInViewport(box));
+      <span class="hljs-keyword">return</span> boxIdx &gt;= <span class="hljs-number">0</span> ? boxIdx : visibleBox;
+    };
+
+    <span class="hljs-keyword">const</span> handleScroll = () =&gt; {
+      <span class="hljs-keyword">const</span> newVisibleBox = getVisibleBox();
+      <span class="hljs-keyword">if</span> (newVisibleBox !== visibleBox) {
+        setVisibleBox(newVisibleBox);
+      }
+    };
+
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&quot;scroll&quot;</span>, handleScroll);
+
+    handleScroll();
+
+    <span class="hljs-keyword">return</span> () =&gt; {
+      <span class="hljs-built_in">document</span>.removeEventListener(<span class="hljs-string">&quot;scroll&quot;</span>, handleScroll);
+    };
+  }, [visibleBox]);
+</code></pre>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p>
+F&#xFC;r diesen Workshop reicht es zu wissen, dass es die <code>useEffect()</code>- Funktion, sowie den 
+<code>addEventListener</code> gibt. Eine genaue Erl&#xE4;uterung ist f&#xFC;r diesen Workshop somit nicht relevant.</p>
+</blockquote>
+<p>Ihre Anwendung sollte, insofern Sie die Datein gespeichert haben, nun wie folgt aussehen:</p>
 <p><a href="../images/stepTwoImage.png"><img src="../images/stepTwoImage.png" alt></a></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, { useState, useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;
 
@@ -575,10 +622,10 @@ Ihre Anwendung sollte, insofern Sie die Datein gespeichert haben, nun wie folgt 
         </div>
 
         
-        <a href="../first-steps/stepOne.html" class="navigation navigation-prev " aria-label="Previous page: MapComponent einbinden"><i class="fa fa-angle-left"></i></a>
+        <a href="../first-steps/stepOne.html" class="navigation navigation-prev " aria-label="Previous page: Karte hinzufügen"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../first-steps/stepThree.html" class="navigation navigation-next " aria-label="Next page: Layer hinzufügen"><i class="fa fa-angle-right"></i></a>
+        <a href="../first-steps/stepThree.html" class="navigation navigation-next " aria-label="Next page: CoVid-Layer hinzufügen"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

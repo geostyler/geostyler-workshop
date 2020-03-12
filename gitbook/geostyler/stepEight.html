@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Daten Parser | GeoStyler - Workshop</title>
+        <title>Daten Parser verwenden | GeoStyler - Workshop</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.9">
@@ -74,10 +74,10 @@
         
     <div class="book"
         data-level="3.4"
-        data-chapter-title="Daten Parser"
+        data-chapter-title="Daten Parser verwenden"
         data-filepath="geostyler/stepEight.md"
         data-basepath=".."
-        data-revision="Tue Mar 10 2020 10:13:15 GMT+0000 (UTC)"
+        data-revision="Thu Mar 12 2020 08:45:37 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -227,7 +227,7 @@
                         
                             <b>2.3.</b>
                         
-                        Dependencies inkludieren
+                        Dependencies hinzufügen
                     </a>
             
             
@@ -242,7 +242,7 @@
                         
                             <b>2.4.</b>
                         
-                        Weitere Dateien
+                        Hilfsdateien einbinden
                     </a>
             
             
@@ -257,7 +257,7 @@
                         
                             <b>2.5.</b>
                         
-                        MapComponent einbinden
+                        Karte hinzufügen
                     </a>
             
             
@@ -272,7 +272,7 @@
                         
                             <b>2.6.</b>
                         
-                        Boxen hinzufügen
+                        Infoboxen hinzufügen
                     </a>
             
             
@@ -287,7 +287,7 @@
                         
                             <b>2.7.</b>
                         
-                        Layer hinzufügen
+                        CoVid-Layer hinzufügen
                     </a>
             
             
@@ -302,7 +302,7 @@
                         
                             <b>2.8.</b>
                         
-                        Drawer und Toggle
+                        Drawer und Toggle hinzufügen
                     </a>
             
             
@@ -322,7 +322,7 @@
                         
                             <b>3.</b>
                         
-                        GeoStyler
+                        GeoStyler einbinden
                     </a>
             
             
@@ -338,7 +338,7 @@
                         
                             <b>3.1.</b>
                         
-                        Wichtige Imports
+                        UI Komponente hinzufügen
                     </a>
             
             
@@ -353,7 +353,7 @@
                         
                             <b>3.2.</b>
                         
-                        Default Style
+                        Style Parser verwenden
                     </a>
             
             
@@ -383,7 +383,7 @@
                         
                             <b>3.4.</b>
                         
-                        Daten Parser
+                        Daten Parser verwenden
                     </a>
             
             
@@ -457,7 +457,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="daten-parser">Daten Parser</h1>
+                        <h1 id="daten-parser-verwenden">Daten Parser verwenden</h1>
 <p>In diesem Unterkapitel wird der <code>GeoJSONParser</code>, welchen wir mit dem Befehl</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> GeoJSONParser <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;geostyler-geojson-parser&quot;</span>;
 </code></pre>
@@ -465,7 +465,22 @@
 Informationen aus den importierten Daten zu f&#xFC;llen. Der Parser erm&#xF6;glicht, dass sich &#xC4;nderungen
 im Layer auf den Stil und &#xC4;nderungen im Stil auf den Layer auswirken.</p>
 <p><strong><em>Aufgabe 1.</em></strong>
-Klicken Sie im <code>GeoStyler</code> auf <em>Classification</em> und folglich auf <em>Attribute</em>. Schauen Sie sich analog
+Importieren Sie den GeoJSONParser (analog zu dem bereits importierten OpenLayersParser) und 
+erstellen Sie eine neue GeoJSONParser Instanz mit dem Namen <code>geojsonParser</code>.</p>
+<p><strong><em>Aufgabe 2.</em></strong>
+Erstellen Sie eine weitere <code>useEffect()</code> - Funktion mit dem <code>geojsonParser</code> und lassen Sie diesen den <code>covidDeath</code> - Layer lesen (<code>.readData()</code>). </p>
+<p><strong><em>Aufgabe 3.</em></strong>
+F&#xFC;gen Sie anschlie&#xDF;end folgenden Code Block unterhalb der <code>.readData()</code> - Methode ein:</p>
+<pre><code class="lang-javascript">      .then(gsData =&gt; {
+        setData(gsData);
+      })
+      .catch(error =&gt; <span class="hljs-built_in">console</span>.log(error));
+  }, [data]);
+</code></pre>
+<p>Dieser Code Block sorgt daf&#xFC;r, dass die Daten des Layers, durch den Daten Parser in der UI angezeigt 
+werden.</p>
+<p><strong><em>Aufgabe 4.</em></strong>
+Klicken Sie nun im <code>GeoStyler</code> auf <em>Classification</em> und folglich auf <em>Attribute</em>. Schauen Sie sich analog
 dazu die <code>covid-death.json</code> Datei an. Was f&#xE4;llt Ihnen auf?</p>
 <p><a href="../images/stepEightImage.png"><img src="../images/stepEightImage.png" alt></a></p>
 <p>Der Code Ihrer L&#xF6;sung k&#xF6;nnte wie folgt aussehen:</p>
