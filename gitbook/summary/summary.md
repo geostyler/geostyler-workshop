@@ -1,4 +1,4 @@
-# Summary
+# Zusammenfassung
 
 Glückwunsch! Sie haben den Geostyler Workshop beendet!
 

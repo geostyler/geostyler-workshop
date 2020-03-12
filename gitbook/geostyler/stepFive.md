@@ -1,4 +1,4 @@
-# Wichtige Imports
+# UI Komponente hinzufügen
 
 In diesem Unterkapitel wird der GeoSstyler der Anwendung zugänglich gemacht. 
 
@@ -10,7 +10,7 @@ import { Style as GsStyle } from "geostyler";
 
 Innerhalb des Drawers, welcher in Kapitel 2.8 hinzugefügt wurde, befindet sich
 die oben importierte `<GsStyle />` Komponente (s. folgendender Code-Block). Durch einen 
-Klick auf den Button wird somit der Drawer und der Geostyler sichtbar.
+Klick auf den Button wird somit der Drawer und der GeoStyler sichtbar.
 
 ```javascript
 <Drawer

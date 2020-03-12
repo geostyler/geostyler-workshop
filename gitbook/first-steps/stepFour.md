@@ -1,4 +1,4 @@
-# Drawer und Toggle
+# Drawer und Toggle hinzufügen
 
 In diesem Unterkapitel wird ein Button und ein Drawer von [antd](https://ant.design/components/button/) importiert. Der Button sorgt dafür, dass sich der Drawer per toggle ein- und ausblenden lässt. 
 
@@ -18,23 +18,25 @@ In diesem Unterkapitel wird ein Button und ein Drawer von [antd](https://ant.des
 Wie anhand des folgenden Code-Auszuges zu erkennen ist, geschieht der toggle-Effekt durch die Veränderung des aktuellen States (`currentState => !currentState`). Der Button und Drawer sind hierbei durch die `setDrawerVisible()`- Funktion vernüpft.
 
 ```javascript
-      <Button
-        className='ws-toggle-editor-btn'
-        type='primary'
-        onClick={() => {
-          setDrawerVisible(currentState => !currentState);
-        }}
-      >
-        Toggle Editor
-      </Button>
+  <Button
+    className='ws-toggle-editor-btn'
+    type='primary'
+    onClick={() => {
+      setDrawerVisible(currentState => !currentState);
+     }}
+  >
+    Toggle Editor
+  </Button>
 ```
 
 > **info**
 > Hier finden Sie weitere Informationen bezüglich [State](https://reactjs.org/docs/state-and-lifecycle.html) und [setState()](https://reactjs.org/docs/faq-state.html). 
 
 ***Aufgabe 1.***
-Wenn Sie nun den Inhalt Ihrer `App.js` Datei erneut mit dem sich unterhalb dieses Abschnittes befindenden
-Codes ersetzen und speichern, dann sollte Ihre Anwendung wie folgt im Browser dargestellt werden:
+Fügen Sie zwei State Variablen mit den Namen `drawerVisible` und `setDrawerVisible` der function Component hinzu und weisen Sie diesen den Wert `useState(false)` zu.
+
+***Aufgabe 2.***
+Erstellen Sie jeweils einen `Drawer` und einen `Button` mit den oben dargestellten Eigenschaften und fügen Sie diese der `return` - Funktion der `App` - Funktion hinzu.
 
 <br>
 

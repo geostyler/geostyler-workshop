@@ -1,4 +1,4 @@
-# OpenLayers Parser
+# Style Parser verwenden
 
 In diesem Unterkapitel kommt erstmals ein Parser zum Einsatz. Dieser wird direkt
 von der GeoStyler Bibliothek importiert und in der Variable `olParser` referenziert (s. folgender Code-Block). Der Parser wird verwendet, um von bereits existierenden Style-Vorschriften zu GeoStyler-Style zu transformieren.

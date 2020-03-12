@@ -1,10 +1,9 @@
-# Weitere Dateien
+# Hilfsdateien einbinden
 
 Bevor Sie im Folgenden Kapitel eine interaktive Kartenanwendung erstellen, müssen zunächst
 weitere Dateien im _{{ book.reactAppName }}_ Ordner erstellt werden.
 
 **Aufgabe 1.**
-
 Erstellen Sie bitte zunächst folgende Dateien im _{{ book.reactAppName }}_ Ordner (achten Sie hierbei dringend auf die Endungen):
 - Attributions.js
 - helper.js
@@ -17,7 +16,6 @@ Erstellen Sie bitte zunächst folgende Dateien im _{{ book.reactAppName }}_ Ordn
 > Hauptsächlich ist die `App.js` für diesen Workshop relevant.
 
 **Aufgabe 2.**
-
 Kopieren Sie nun die jeweiligen Code-Blöcke (siehe unten) der entsprechenden Dateien und fügen Sie diese in die von Ihnen erstellte dazugehörige Datei ein.
 
 Attributions.js

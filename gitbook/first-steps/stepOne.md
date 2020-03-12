@@ -1,4 +1,4 @@
-# MapComponent einbinden 
+# Karte hinzufügen
 
 Nachdem wir die für diesen Workshop notwendigen Dependencies installiert haben, können wir deren Komponenten in der
 _{{ book.reactAppName }}_ Anwendung nutzen. Als nächstes werden wir react-geos

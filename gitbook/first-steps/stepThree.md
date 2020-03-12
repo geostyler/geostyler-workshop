@@ -1,4 +1,4 @@
-# Layer hinzufügen
+# CoVid-Layer hinzufügen
 
 In diesem Unterkapitel werden wir der `map` Variable einen weiteren Layer zuweisen (neben dem bereits im Kapitel 2.5 hinzugefügten base-Layer).
 <br><br>
