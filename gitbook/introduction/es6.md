@@ -5,7 +5,7 @@
 ES (ECMAScript) ist eine markenrechtlich geschütze Spezifikation der Skriptsprache, die zur Standardisierung von JavaScript
 erstellt wurde. Wie der Name schon verrät, ist ES6 (später in ES2015 unbenannt) die sechste Ausgabe und wurde mit einer bedeutenden
 neuen Syntax zum Schreiben komplexer Anwendungen ausgestattet, einschließlich Klassen und Module. Einige Browser unterstützen
-ES6 nicht (oder nur teilweise), weswegen der ES6 Code in ES5 transiliert werden kann. ES5 genießt eine breitere Kompabilität.
+ES6 nicht (oder nur teilweise), weswegen der ES6 Code in ES5 transpiliert werden kann. ES5 genießt eine breitere Kompabilität.
 
 JavaScript-Frameworks und Bilbiotheken zur Erstellung moderner Webanwendunge sind in ES6 geschrieben.
 
