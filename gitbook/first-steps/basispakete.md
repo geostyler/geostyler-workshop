@@ -5,7 +5,7 @@ Um die `GeoStyler` dependency hinzuzufügen, navigieren Sie bitte (falls noch ni
 Ihres Projektes und führen Sie dort folgenden Befehl aus
 
 ```javascript
-npm install geostyler
+npm install geostyler@721
 ```
 
 > **info**
@@ -27,8 +27,8 @@ npm i @terrestris/react-geo
 
 Sie haben vielleicht bemerkt, dass der Schritt von oben einige Warnungen hervorgerufen hat, die `GeoStyler` einschließen:
 
-<pre><xmp>npm WARN geostyler@4.5.0 requires a peer of antd@3.x but none is installed. You must install peer dependencies yourself.
-npm WARN geostyler@4.5.0 requires a peer of ol@5.x but none is installed. You must install peer dependencies yourself.</xmp></pre>
+<pre><xmp>npm WARN geostyler@7.2.1 requires a peer of antd@"4.x but none is installed. You must install peer dependencies yourself.
+npm WARN geostyler@7.2.1 requires a peer of ol@6.x but none is installed. You must install peer dependencies yourself.</xmp></pre>
 
 `npm` hat drei verschiedene Arten von dependencies:
 
@@ -55,7 +55,7 @@ Da `npm` Abhängigkeiten hierarchisch behandelt, würde die doppelte Einbeziehun
 Um diese Anforderungen zu erfüllen, müssen wir die gewünschten *peer dependencies* mit folgendem Befehl installieren:
 
 ```
-npm i antd@3.x ol@6
+npm i antd@4.x ol@6
 ```
 
 Jetzt sind wir bereit, alle `react-geo` Komponenten innerhalb

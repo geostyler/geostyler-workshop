@@ -1,35 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import OlMap from 'ol/Map';
-import OlView from 'ol/View';
-import DragPan from 'ol/interaction/DragPan';
-import { Drawer, Button } from 'antd';
+import OlMap from "ol/Map";
+import OlView from "ol/View";
+import DragPan from "ol/interaction/DragPan";
+import { Drawer, Button } from "antd";
 
-import OpenLayersParser from 'geostyler-openlayers-parser';
-import GeoJSONParser from 'geostyler-geojson-parser';
+import OpenLayersParser from "geostyler-openlayers-parser";
+import GeoJSONParser from "geostyler-geojson-parser";
 
-import isElementInViewport from './viewportHelper';
+import isElementInViewport from "./viewportHelper";
 
-import './App.css';
-import 'ol/ol.css';
-import 'antd/dist/antd.css';
-import './Workshop.css';
-import Attributions from './Attributions';
-import {
-  getDefaultStyle,
-  getBaseLayer,
-  getCovidLayer
-} from './helper';
+import "./App.css";
+import "ol/ol.css";
+import "antd/dist/antd.css";
+import "./Workshop.css";
+import Attributions from "./Attributions";
+import { getDefaultStyle, getBaseLayer, getCovidLayer } from "./helper";
 
-import {
-  MapComponent
-} from '@terrestris/react-geo';
+import { MapComponent } from "@terrestris/react-geo";
 
-import {
-  Style as GsStyle
-} from 'geostyler'
+import { Style as GsStyle } from "geostyler";
 
-import covidDeath from './data/covid-death.json';
+import covidDeath from "./data/covid-death.json";
 
 const defaultOlStyle = getDefaultStyle();
 
@@ -42,7 +34,7 @@ const map = new OlMap({
   view: new OlView({
     center: center,
     zoom: 2,
-    projection: 'EPSG:3857'
+    projection: "EPSG:3857"
   }),
   layers: [base, vector],
   interactions: [new DragPan()]
@@ -52,7 +44,6 @@ const olParser = new OpenLayersParser();
 const geojsonParser = new GeoJSONParser();
 
 function App() {
-
   let [styles, setStyles] = useState([]);
   let [drawerVisible, setDrawerVisible] = useState(false);
   let [visibleBox, setVisibleBox] = useState(0);
@@ -64,9 +55,9 @@ function App() {
     olParser
       .readStyle(defaultOlStyle)
       .then(gsStyle => {
-        const newStyles = []
+        const newStyles = [];
         for (var i = 0; i < 3; i++) {
-          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
+          newStyles.push(JSON.parse(JSON.stringify(gsStyle.output)));
         }
         setStyles(newStyles);
       })
@@ -90,7 +81,7 @@ function App() {
       olParser
         .writeStyle(newStyle)
         .then(olStyle => {
-          vector.setStyle(olStyle);
+          vector.setStyle(olStyle.output);
         })
         .catch(error => console.log(error));
     }
@@ -102,45 +93,42 @@ function App() {
     // box changes. Otherwise we don't have visible box in our scope
     const getVisibleBox = () => {
       const boxes = [
-        document.getElementById('ws-overlay-1'),
-        document.getElementById('ws-overlay-2'),
-        document.getElementById('ws-overlay-3')
-      ]
+        document.getElementById("ws-overlay-1"),
+        document.getElementById("ws-overlay-2"),
+        document.getElementById("ws-overlay-3")
+      ];
       const boxIdx = boxes.findIndex(box => isElementInViewport(box));
       return boxIdx >= 0 ? boxIdx : visibleBox;
-    }
+    };
 
     const handleScroll = () => {
       const newVisibleBox = getVisibleBox();
       if (newVisibleBox !== visibleBox) {
         setVisibleBox(newVisibleBox);
       }
-    }
+    };
 
-    document.addEventListener('scroll', handleScroll);
+    document.addEventListener("scroll", handleScroll);
 
     handleScroll();
 
     return () => {
-      document.removeEventListener('scroll', handleScroll);
-    }
+      document.removeEventListener("scroll", handleScroll);
+    };
   }, [visibleBox]);
 
-
   return (
-    <div className="App">
+    <div className='App'>
       <Button
-        className="ws-toggle-editor-btn"
-        type="primary"
+        className='ws-toggle-editor-btn'
+        type='primary'
         onClick={() => {
-          setDrawerVisible((currentState) => !currentState);
+          setDrawerVisible(currentState => !currentState);
         }}
       >
         Toggle Editor
       </Button>
-      <MapComponent
-        map={map}
-      />
+      <MapComponent map={map} />
       <Drawer
         title='GeoStyler Editor'
         placement='top'
@@ -159,7 +147,7 @@ function App() {
             olParser
               .writeStyle(newStyle)
               .then(olStyle => {
-                vector.setStyle(olStyle);
+                vector.setStyle(olStyle.output);
               })
               .catch(error => console.log(error));
             setStyles(oldStyles => {
@@ -170,25 +158,19 @@ function App() {
           }}
         />
       </Drawer>
-      <span id="ws-overlay-1" className="ws-overlay">
+      <span id='ws-overlay-1' className='ws-overlay'>
         <h1>Overlay {visibleBox + 1}</h1>
-        <p>
-          Put your info text here
-          </p>
+        <p>Put your info text here</p>
       </span>
-      <div id="ws-overlay-2" className="ws-overlay">
+      <div id='ws-overlay-2' className='ws-overlay'>
         <h1>Overlay {visibleBox + 1}</h1>
-        <p>
-          Put your info text here
-          </p>
+        <p>Put your info text here</p>
       </div>
-      <div id="ws-overlay-3" className="ws-overlay">
+      <div id='ws-overlay-3' className='ws-overlay'>
         <h1>Overlay {visibleBox + 1}</h1>
-        <p>
-          Put your info text here
-          </p>
+        <p>Put your info text here</p>
       </div>
-      <Attributions/>
+      <Attributions />
     </div>
   );
 }
