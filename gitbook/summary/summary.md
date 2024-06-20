@@ -66,7 +66,7 @@ function App() {
       .then(gsStyle => {
         const newStyles = [];
         for (var i = 0; i < 3; i++) {
-          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
+          newStyles.push(JSON.parse(JSON.stringify(gsStyle.output)));
         }
         setStyles(newStyles);
       })
@@ -90,7 +90,7 @@ function App() {
       olParser
         .writeStyle(newStyle)
         .then(olStyle => {
-          vector.setStyle(olStyle);
+          vector.setStyle(olStyle.output);
         })
         .catch(error => console.log(error));
     }
@@ -156,7 +156,7 @@ function App() {
             olParser
               .writeStyle(newStyle)
               .then(olStyle => {
-                vector.setStyle(olStyle);
+                vector.setStyle(olStyle.output);
               })
               .catch(error => console.log(error));
             setStyles(oldStyles => {

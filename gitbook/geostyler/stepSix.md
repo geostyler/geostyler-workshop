@@ -7,9 +7,9 @@ von der GeoStyler Bibliothek importiert und in der Variable `olParser` referenzi
 import OpenLayersParser from "geostyler-openlayers-parser";
 const olParser = new OpenLayersParser();
 
-OlParser
+olParser
   .readStyle(defaultOlStyle)
-  .then(gsStyle => console.log(gsStyle))
+  .then(gsStyle => console.log(gsStyle.output))
   .catch(error => console.log(error));
 ```
 
@@ -89,7 +89,7 @@ function App() {
       .then(gsStyle => {
         const newStyles = [];
         for (var i = 0; i < 3; i++) {
-          newStyles.push(JSON.parse(JSON.stringify(gsStyle)));
+          newStyles.push(JSON.parse(JSON.stringify(gsStyle.output)));
         }
         setStyles(newStyles);
       })
